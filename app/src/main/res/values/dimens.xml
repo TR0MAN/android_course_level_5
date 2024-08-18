@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    authorization activity parameters  -->
+    <dimen name="AuthorizationQuestionTextMarginBottom">10dp</dimen>
+    <dimen name="AuthorizationQuestionTextSize">16sp</dimen>
+
+    <dimen name="AuthorizationSingInTextMarginStart">16dp</dimen>
+    <dimen name="AuthorizationSingInTextSize">16sp</dimen>
+
+    <dimen name="AuthorizationAdditionalTextMarginBottom">4dp</dimen>
+    <dimen name="AuthorizationAdditionalTextSize">14sp</dimen>
+
+    <dimen name="AuthorizationRegisterButtonHeight">63dp</dimen>
+    <dimen name="AuthorizationRegisterButtonHorizontalMargin">8dp</dimen>
+    <dimen name="AuthorizationRegisterButtonMarginBottom">14dp</dimen>
+    <dimen name="AuthorizationRegisterButtonTextSize">18sp</dimen>
+
+    <dimen name="AuthorizationTextOrMarginBottom">4dp</dimen>
+    <dimen name="AuthorizationTextOrTextSize">20sp</dimen>
+
+    <dimen name="ButtonImitatorHeight">48dp</dimen>
+    <dimen name="ButtonImitatorHorizontalMargin">8dp</dimen>
+    <dimen name="ButtonImitatorMarginBottom">4dp</dimen>
+
+    <dimen name="AuthorizationButtonGoogleTextPaddingLeft">16dp</dimen>
+    <dimen name="AuthorizationButtonGoogleTextSize">18sp</dimen>
+
+    <dimen name="AuthorizationRememberMeMarginBottom">36dp</dimen>
+    <dimen name="AuthorizationRememberMeTextSize">14sp</dimen>
+
+    <dimen name="InputPasswordContainerMarginHorizontal">12dp</dimen>
+    <dimen name="InputPasswordContainerMarginTop">16dp</dimen>
+
+    <dimen name="InputPasswordFormPaddingStart">8dp</dimen>
+    <dimen name="InputPasswordFormTextSize">20sp</dimen>
+
+    <dimen name="LinearLayoutTopContainerMarginBottom">28dp</dimen>
+
+    <!--    DELETE THIS PARAMETER AFTER CHANGE -->
+    <dimen name="InputPasswordFormMaxLength">16</dimen>
+
+    <dimen name="AuthorizationPasswordTextMarginStart">12dp</dimen>
+    <dimen name="AuthorizationPasswordTextSize">14sp</dimen>
+
+    <dimen name="InputEmailContainerMarginHorizontal">12dp</dimen>
+    <dimen name="InputEmailContainerMarginTop">16dp</dimen>
+
+    <dimen name="InputEmailFormPaddingStart">22dp</dimen>
+    <dimen name="InputEmailFormTextSize">20sp</dimen>
+
+    <dimen name="AuthorizationTextEmailTextSize">14sp</dimen>
+    <dimen name="AuthorizationHelperTextMarginBottom">28dp</dimen>
+    <dimen name="AuthorizationAdditionalHelperTextSize">12sp</dimen>
+
+    <dimen name="AuthorizationGreetingsTextMarginBottom">8dp</dimen>
+    <dimen name="AuthorizationGreetingsTextSize">26sp</dimen>
+
+    <dimen name="progressbar_padding">12dp</dimen>
+    <dimen name="AuthorizationRegisterButtonLetterSpacing">0.15</dimen>
+    <dimen name="AuthorizationButtonGoogleTextLetterSpacing">0.15</dimen>
+
+    <dimen name="AuthorizationAdditionalTextHorizontalBias">0.5</dimen>
+    <dimen name="AuthorizationQuestionTextHorizontalBias">0.5</dimen>
+    <dimen name="AuthorizationSignInTextHorizontalBias">0.5</dimen>
+
+    <dimen name="LinearLayoutButtonImitatorVerticalBias">1.0</dimen>
+    <dimen name="LinearLayoutButtonImitatorMarginTop">68dp</dimen>
+
+    <dimen name="LinearLayoutMiddleContainerHorizontalMargin">12dp</dimen>
+    <dimen name="LinearLayoutMiddleContainerHorizontalBias">0.333</dimen>
+    <dimen name="LinearLayoutMiddleContainerVerticalBias">1.0</dimen>
+
+    <dimen name="LineSeparatorHeight">2dp</dimen>
+    <dimen name="PasswordFieldLetterSpacing">0.2</dimen>
+    <dimen name="ConstraintGuidelinePercent">0.54</dimen>
+
+    <!--    unnecessary parameters of additional view elements -->
+    <dimen name="fill_authorisation_data_image_width">40dp</dimen>
+    <dimen name="fill_authorisation_data_image_height">40dp</dimen>
+    <dimen name="CheckboxAuthorizationRememberMeMarginTop">10dp</dimen>
+    <dimen name="CheckboxAuthorizationRememberMePaddingLeft">8dp</dimen>
+    <dimen name="LinearLayoutTopContainerMarginTop">100dp</dimen>
+
+
+</resources>

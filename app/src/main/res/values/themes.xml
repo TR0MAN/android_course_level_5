@@ -6,4 +6,40 @@
     </style>
 
     <style name="Theme.AndroidCourseLevel5" parent="Base.Theme.AndroidCourseLevel5" />
+
+    <style name="AuthorizationTextFieldStyle">
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/opensans_semibold_600</item>
+    </style>
+
+    <style name="AuthorizationHelperTextStyle">
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/red_color</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/opensans_regular_400</item>
+    </style>
+
+    <style name="AuthorizationEditFieldStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:fontFamily">@font/opensans_semibold_600</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white_color</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_style</item>
+    </style>
+
+
+
 </resources>

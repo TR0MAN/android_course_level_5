@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">AndroidCourseLevel5</string>
+    <string name="app_name">AndroidCourse</string>
+
+    <!--    authorization activity text -->
+    <string name="authorization_question_text">Already have an account?</string>
+    <string name="authorization_sing_in_text">Sign in</string>
+    <string name="authorization_additional_text">By clicking Register you agree to our Terms\n and Conditions</string>
+    <string name="authorization_register_button_text">REGISTER</string>
+    <string name="authorization_text_or">or</string>
+    <string name="authorization_button_google_text" translatable="false">GOOGLE</string>
+    <string name="authorization_remember_me_text">Remember me</string>
+    <string name="authorization_email_and_password_helper_text">required</string>
+    <string name="authorization_password_text">Password</string>
+    <string name="authorization_email_text">E-mail</string>
+    <string name="authorization_helper_text">Fill out the profile and go to the application</string>
+    <string name="authorization_greetings_text">Let\'s get acquainted</string>
+
 </resources>
