@@ -15,4 +15,19 @@
     <string name="authorization_helper_text">Fill out the profile and go to the application</string>
     <string name="authorization_greetings_text">Let\'s get acquainted</string>
 
+    <!--    registration activity text  -->
+    <string name="registration_activity_tv_inscription_user_name_text">Username</string>
+    <string name="registration_activity_tv_inscription_career_text">Career</string>
+    <string name="registration_activity_tv_inscription_phone_text">Phone</string>
+    <string name="registration_activity_phone_hint">example 099-456-78-90</string>
+    <string name="registration_activity_tv_inscription_address_text">Address</string>
+    <string name="registration_activity_tv_inscription_birthday_text">Date of birth</string>
+    <string name="registration_activity_contact_birthday_help">( for example 2000/05/25 )</string>
+    <string name="registration_activity_contact_birthday_hint">example 2000/05/23</string>
+    <string name="registration_activity_contact_btn_save_text">SAVE</string>
+
+
+
+
+
 </resources>

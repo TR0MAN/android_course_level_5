@@ -40,6 +40,32 @@
         <item name="android:textCursorDrawable">@drawable/cursor_style</item>
     </style>
 
+    <style name="RegistrationTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/opensans_semibold_600</item>
+        <item name="android:paddingLeft">4dp</item>
+    </style>
+
+    <style name="RegistrationEditTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/opensans_semibold_600</item>
+        <item name="android:textColor">@color/white_color</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:backgroundTint">@color/gray_color</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_style</item>
+    </style>
+
+    <style name="RegistrationLinearContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 
 
 </resources>

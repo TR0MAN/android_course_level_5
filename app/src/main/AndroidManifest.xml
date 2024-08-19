@@ -17,6 +17,9 @@
             android:exported="false" />
         <activity
             android:name=".presentation.ui.AuthorizationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.RegistrationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
