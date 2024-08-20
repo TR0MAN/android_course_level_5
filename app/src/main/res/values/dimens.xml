@@ -112,5 +112,46 @@
     <dimen name="registration_activity_container_button_save_vertical_margin">14dp</dimen>
     <dimen name="registration_activity_button_save_letter_spacing">0.15</dimen>
 
+    <!--    profile settings fragment screen parameters  -->
+
+    <dimen name="fr_settings_elements_container_horizontal_padding">19dp</dimen>
+    <dimen name="fr_settings_elements_container_margin_top">16dp</dimen>
+    <dimen name="fr_settings_user_information_container_margin_top">16dp</dimen>
+    <dimen name="fr_settings_user_information_container_margin_bottom">8dp</dimen>
+
+    <dimen name="fr_settings_avatar_container_margin_top">16dp</dimen>
+
+    <dimen name="fr_settings_margin_top">24dp</dimen>
+    <dimen name="fr_settings_text_size">26sp</dimen>
+
+    <dimen name="fr_settings_button_logout_horizontal_padding">36dp</dimen>
+    <dimen name="fr_settings_button_logout_text_size">16sp</dimen>
+
+    <dimen name="fr_settings_image_view_width">115dp</dimen>
+    <dimen name="fr_settings_image_view_height">115dp</dimen>
+
+    <dimen name="fr_settings_name_text_size">20sp</dimen>
+    <dimen name="fr_settings_profession_margin_top">8dp</dimen>
+    <dimen name="fr_settings_profession_text_size">16sp</dimen>
+
+    <dimen name="fr_settings_address_width">228dp</dimen>
+    <dimen name="fr_settings_address_min_height">40dp</dimen>
+    <dimen name="fr_settings_address_text_size">16sp</dimen>
+    <dimen name="fr_settings_address_margin_top">16sp</dimen>
+
+    <dimen name="fr_settings_my_contacts_button_height">55dp</dimen>
+
+    <dimen name="fr_settings_my_contacts_button_text_size">16sp</dimen>
+    <dimen name="fr_settings_my_contacts_button_letter_spacing">0.15</dimen>
+
+    <dimen name="fr_settings_edit_profile_button_margin_top">8dp</dimen>
+    <dimen name="fr_settings_edit_profile_button_text_size">20sp</dimen>
+    <dimen name="fr_settings_edit_profile_button_margin_bottom">14dp</dimen>
+
+    <dimen name="fr_settings_icon_linkedin_horizontal_margin">32dp</dimen>
+    <dimen name="fr_settings_button_container_margin_top">54dp</dimen>
+    <dimen name="fr_settings_button_container_horizontal_padding">16dp</dimen>
+    <dimen name="fr_settings_icon_container_margin_top">54dp</dimen>
+
 
 </resources>

@@ -26,7 +26,14 @@
     <string name="registration_activity_contact_birthday_hint">example 2000/05/23</string>
     <string name="registration_activity_contact_btn_save_text">SAVE</string>
 
-
+    <!--    profile settings fragment text -->
+    <string name="fr_settings_textview_settings_text">Settings</string>
+    <string name="fr_settings_button_log_out_text">Log out</string>
+    <string name="fr_settings_textview_name_text">Tkachenko Roman</string>
+    <string name="fr_settings_textview_profession_text">Android course student</string>
+    <string name="fr_settings_textview_address_text">5295 Gaylord Walks Apk. 110</string>
+    <string name="fr_settings_my_contacts_button_text">View my contacts</string>
+    <string name="fr_settings_edit_profile_button_text">Edit profile</string>
 
 
 

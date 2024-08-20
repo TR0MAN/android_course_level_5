@@ -190,7 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/registration_activity_btn_save_height"
                 android:layout_marginHorizontal="@dimen/registration_activity_btn_save_horizontal_margin"
-                android:background="@drawable/registration_save_button_style"
+                android:background="@drawable/orange_button_style"
                 android:fontFamily="@font/opensans_semibold_600"
                 android:letterSpacing="@dimen/registration_activity_button_save_letter_spacing"
                 android:text="@string/registration_activity_contact_btn_save_text"
