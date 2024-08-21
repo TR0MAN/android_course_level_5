@@ -8,7 +8,6 @@ class RegistrationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_registration)
-        setContentView(R.layout.fragment_profile_invite)
-//        setContentView(R.layout.fragment_contact_info)
+        setContentView(R.layout.fragment_contacts_list)
     }
 }

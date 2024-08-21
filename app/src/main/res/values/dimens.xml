@@ -152,11 +152,7 @@
     <dimen name="fr_settings_button_container_horizontal_padding">16dp</dimen>
     <dimen name="fr_settings_icon_container_margin_top">54dp</dimen>
 
-    <!--    custom toolbar profile parameters  -->
-    <dimen name="custom_toolbar_profile_img_back_padding">10dp</dimen>
-    <dimen name="custom_toolbar_profile_img_back_height">0dp</dimen>
-    <dimen name="custom_toolbar_profile_text_size">20sp</dimen>
-    <dimen name="custom_toolbar_profile_guideline_position">0.50</dimen>
+
 
     <!--    profile invite fragment screen parameters  -->
     <dimen name="fr_invite_middle_guideline_position">0.50</dimen>
@@ -210,8 +206,6 @@
     <dimen name="fr_contact_info_icon_container_margin_top">54dp</dimen>
     <dimen name="fr_contact_info_icon_linkedin_horizontal_margin">32dp</dimen>
 
-
-
     <dimen name="fr_contact_info_button_message_height">55dp</dimen>
     <dimen name="fr_contact_info_button_message_letter_spacing">0.15</dimen>
     <dimen name="fr_contact_info_button_message_text_size">16sp</dimen>
@@ -220,6 +214,47 @@
     <dimen name="fr_contact_info_button_message_margin_top">110dp</dimen>
 
     <dimen name="fr_contact_info_progressbar_padding">12dp</dimen>
+
+    <!--    custom toolbar profile parameters  -->
+    <dimen name="custom_toolbar_profile_img_back_padding">10dp</dimen>
+    <dimen name="custom_toolbar_profile_img_back_height">0dp</dimen>
+    <dimen name="custom_toolbar_profile_text_size">20sp</dimen>
+    <dimen name="custom_toolbar_profile_guideline_position">0.50</dimen>
+
+    <!--    custom toolbar contacts parameters  -->
+    <dimen name="toolbar_contacts_list_img_back_padding">10dp</dimen>
+    <dimen name="toolbar_contacts_list_text_size">24sp</dimen>
+    <dimen name="toolbar_contacts_list_img_search_padding">10dp</dimen>
+    <dimen name="toolbar_contacts_list_img_close_padding">10dp</dimen>
+    <dimen name="toolbar_contacts_list_vertical_padding">3dp</dimen>
+    <dimen name="toolbar_contacts_list_search_field_margin_start">16dp</dimen>
+    <dimen name="toolbar_contacts_list_padding_start">18dp</dimen>
+    <dimen name="toolbar_contacts_list_padding_right">8dp</dimen>
+    <dimen name="toolbar_contacts_list_guideline_position">0.5</dimen>
+    <dimen name="toolbar_contacts_list_img_back_height">0dp</dimen>
+    <dimen name="toolbar_contacts_list_img_search_height">0dp</dimen>
+    <dimen name="toolbar_contacts_list_search_field_width">0dp</dimen>
+    <dimen name="toolbar_contacts_list_img_close_height">0dp</dimen>
+
+    <!--    fragment contacts list parameters  -->
+    <dimen name="contacts_list_new_contact_container_height">56dp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_margin_start">14dp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_padding">4dp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_size">16sp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_margin_top">8dp</dimen>
+
+    <dimen name="contacts_list_empty_list_container_padding">4dp</dimen>
+    <dimen name="contacts_list_image_no_contacts_width">150dp</dimen>
+    <dimen name="contacts_list_image_no_contacts_height">150dp</dimen>
+    <dimen name="contacts_list_no_contact_found_text_size">22sp</dimen>
+
+    <dimen name="contacts_list_image_group_delete_margin_end">16dp</dimen>
+    <dimen name="contacts_list_image_group_delete_padding_top">16dp</dimen>
+    <dimen name="contacts_list_image_group_delete_margin_bottom">26dp</dimen>
+
+    <dimen name="contacts_list_recycler_view_width">0dp</dimen>
+    <dimen name="contacts_list_recycler_view_height">0dp</dimen>
+
 
 
 </resources>
