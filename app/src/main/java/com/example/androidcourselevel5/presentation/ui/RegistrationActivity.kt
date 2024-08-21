@@ -9,5 +9,6 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_registration)
         setContentView(R.layout.fragment_profile_invite)
+//        setContentView(R.layout.fragment_contact_info)
     }
 }

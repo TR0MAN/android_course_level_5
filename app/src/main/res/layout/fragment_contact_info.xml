@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
-    tools:context="com.example.androidcourselevel5.presentation.ui.FragmentProfileInvite">
+    tools:context="com.example.androidcourselevel5.presentation.ui.FragmentContactInfo">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutMain"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="@dimen/fr_invite_middle_guideline_position" />
+            app:layout_constraintGuide_percent="@dimen/fr_contact_info_middle_guideline_position" />
 
         <include
             android:id="@+id/customToolbarProfile"
@@ -51,15 +51,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="@dimen/fr_invite_avatar_container_margin_top"
+            android:layout_marginTop="@dimen/fr_contact_info_avatar_container_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/customToolbarProfile">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imgProfileInviteMainPhoto"
-                android:layout_width="@dimen/fr_invite_image_view_width"
-                android:layout_height="@dimen/fr_invite_image_view_height"
+                android:id="@+id/imgContactInfoMainPhoto"
+                android:layout_width="@dimen/fr_contact_info_image_view_width"
+                android:layout_height="@dimen/fr_contact_info_image_view_height"
                 app:shapeAppearanceOverlay="@style/RoundImage"
                 app:srcCompat="@drawable/profile_photo" />
 
@@ -71,8 +71,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/fr_invite_user_information_container_margin_bottom"
-            android:layout_marginTop="@dimen/fr_invite_user_information_container_margin_top"
+            android:layout_marginBottom="@dimen/fr_contact_info_user_information_container_margin_bottom"
+            android:layout_marginTop="@dimen/fr_contact_info_user_information_container_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/avatarContainer"
@@ -83,31 +83,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_semibold_600"
-                android:text="@string/fr_invite_textview_name_text"
+                android:text="@string/fr_contact_info_textview_name_text"
                 android:textColor="@color/white_color"
-                android:textSize="@dimen/fr_invite_name_text_size" />
+                android:textSize="@dimen/fr_contact_info_name_text_size" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvProfileProfession"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/fr_invite_profession_margin_top"
+                android:layout_marginTop="@dimen/fr_contact_info_profession_margin_top"
                 android:fontFamily="@font/opensans_semibold_600"
-                android:text="@string/fr_invite_textview_profession_text"
+                android:text="@string/fr_contact_info_textview_profession_text"
                 android:textColor="@color/gray_color"
-                android:textSize="@dimen/fr_invite_profession_text_size" />
+                android:textSize="@dimen/fr_contact_info_profession_text_size" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvProfileAddress"
-                android:layout_width="@dimen/fr_invite_address_width"
+                android:layout_width="@dimen/fr_contact_info_address_width"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/fr_invite_address_min_height"
-                android:layout_marginTop="@dimen/fr_invite_address_margin_top"
-                android:text="@string/fr_invite_textview_address_text"
+                android:minHeight="@dimen/fr_contact_info_address_min_height"
+                android:layout_marginTop="@dimen/fr_contact_info_address_margin_top"
+                android:text="@string/fr_contact_info_textview_address_text"
                 android:fontFamily="@font/opensans_semibold_600"
                 android:textAlignment="center"
                 android:textColor="@color/gray_color"
-                android:textSize="@dimen/fr_invite_address_text_size" />
+                android:textSize="@dimen/fr_contact_info_address_text_size" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -115,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="@dimen/fr_invite_icon_container_margin_top"
+            android:layout_marginTop="@dimen/fr_contact_info_icon_container_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/middleGuideline" >
@@ -128,7 +128,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconLinkedIn"
                 style="@style/ProfileSettingsSocialIconStyle"
-                android:layout_marginHorizontal="@dimen/fr_invite_icon_linkedin_horizontal_margin"
+                android:layout_marginHorizontal="@dimen/fr_contact_info_icon_linkedin_horizontal_margin"
                 android:src="@drawable/ic_linkedin" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -138,49 +138,30 @@
                 android:src="@drawable/ic_instagram" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/buttonContainer"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnContactInfoMessage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fr_invite_button_container_margin_top"
-            android:orientation="vertical"
-            android:paddingHorizontal="@dimen/fr_invite_button_container_horizontal_padding"
-            app:layout_constraintVertical_bias="@dimen/fr_invite_button_container_vertical_bias"
+            android:layout_height="@dimen/fr_contact_info_button_message_height"
+            android:layout_marginHorizontal="@dimen/fr_contact_info_button_message_horizontal_margin"
+            android:layout_marginTop="@dimen/fr_contact_info_button_message_margin_top"
+            android:background="@drawable/orange_button_style"
+            android:fontFamily="@font/opensans_semibold_600"
+            android:letterSpacing="@dimen/fr_contact_info_button_message_letter_spacing"
+            android:text="@string/fr_contact_info_my_contacts_button_text"
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/fr_contact_info_button_message_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iconContainer" >
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnInviteMessage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/fr_invite_edit_profile_button_margin_bottom"
-                android:background="@drawable/edit_profile_button_selector"
-                android:text="@string/fr_invite_edit_profile_button_text"
-                android:textAllCaps="false"
-                android:textColor="@color/edit_button_custom_text_color"
-                android:textSize="@dimen/fr_invite_edit_profile_button_text_size" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnInviteAddToContacts"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fr_invite_my_contacts_button_height"
-                android:background="@drawable/orange_button_style"
-                android:fontFamily="@font/opensans_semibold_600"
-                android:letterSpacing="@dimen/fr_invite_my_contacts_button_letter_spacing"
-                android:text="@string/fr_invite_my_contacts_button_text"
-                android:textColor="@color/white_color"
-                android:textSize="@dimen/fr_invite_my_contacts_button_text_size" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            app:layout_constraintTop_toBottomOf="@+id/iconContainer"
+            app:layout_constraintVertical_bias="@dimen/fr_contact_info_button_message_vertical_bias" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/progressbar_style"
-            android:padding="@dimen/fr_invite_progressbar_padding"
+            android:padding="@dimen/fr_contact_info_progressbar_padding"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -180,6 +180,7 @@
 
     <dimen name="fr_invite_button_container_margin_top">54dp</dimen>
     <dimen name="fr_invite_button_container_horizontal_padding">16dp</dimen>
+    <dimen name="fr_invite_button_container_vertical_bias">0.65</dimen>
 
     <dimen name="fr_invite_edit_profile_button_margin_bottom">14dp</dimen>
     <dimen name="fr_invite_edit_profile_button_text_size">20sp</dimen>
@@ -188,5 +189,37 @@
     <dimen name="fr_invite_my_contacts_button_letter_spacing">0.15</dimen>
     <dimen name="fr_invite_my_contacts_button_text_size">16sp</dimen>
     <dimen name="fr_invite_progressbar_padding">12dp</dimen>
+
+    <!--    contact information fragment screen parameters  -->
+    <dimen name="fr_contact_info_middle_guideline_position">0.50</dimen>
+    <dimen name="fr_contact_info_avatar_container_margin_top">18dp</dimen>
+    <dimen name="fr_contact_info_image_view_width">115dp</dimen>
+    <dimen name="fr_contact_info_image_view_height">115dp</dimen>
+    <dimen name="fr_contact_info_user_information_container_margin_bottom">8dp</dimen>
+    <dimen name="fr_contact_info_user_information_container_margin_top">16dp</dimen>
+
+    <dimen name="fr_contact_info_name_text_size">20sp</dimen>
+    <dimen name="fr_contact_info_profession_margin_top">8dp</dimen>
+    <dimen name="fr_contact_info_profession_text_size">16sp</dimen>
+
+    <dimen name="fr_contact_info_address_width">228dp</dimen>
+    <dimen name="fr_contact_info_address_min_height">40dp</dimen>
+    <dimen name="fr_contact_info_address_margin_top">16sp</dimen>
+    <dimen name="fr_contact_info_address_text_size">16sp</dimen>
+
+    <dimen name="fr_contact_info_icon_container_margin_top">54dp</dimen>
+    <dimen name="fr_contact_info_icon_linkedin_horizontal_margin">32dp</dimen>
+
+
+
+    <dimen name="fr_contact_info_button_message_height">55dp</dimen>
+    <dimen name="fr_contact_info_button_message_letter_spacing">0.15</dimen>
+    <dimen name="fr_contact_info_button_message_text_size">16sp</dimen>
+    <dimen name="fr_contact_info_button_message_vertical_bias">0.65</dimen>
+    <dimen name="fr_contact_info_button_message_horizontal_margin">16dp</dimen>
+    <dimen name="fr_contact_info_button_message_margin_top">110dp</dimen>
+
+    <dimen name="fr_contact_info_progressbar_padding">12dp</dimen>
+
 
 </resources>

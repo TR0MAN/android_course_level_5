@@ -45,4 +45,11 @@
     <string name="fr_invite_edit_profile_button_text">Message</string>
     <string name="fr_invite_my_contacts_button_text">Add to my contacts</string>
 
+    <!--    contact information fragment text  -->
+    <string name="fr_contact_info_textview_name_text">Jenny Walker</string>
+    <string name="fr_contact_info_textview_profession_text">Make-up artist</string>
+    <string name="fr_contact_info_textview_address_text">775 Westminster Avenue APT D5 Brooklyn, NY, 11230</string>
+    <string name="fr_contact_info_my_contacts_button_text">Message</string>
+
+
 </resources>
