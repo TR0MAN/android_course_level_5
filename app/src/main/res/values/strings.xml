@@ -35,6 +35,14 @@
     <string name="fr_settings_my_contacts_button_text">View my contacts</string>
     <string name="fr_settings_edit_profile_button_text">Edit profile</string>
 
+    <!--    custom toolbar profile text  -->
+    <string name="custom_toolbar_profile_textview_text">Profile</string>
 
+    <!--    profile invite fragment text -->
+    <string name="fr_invite_textview_name_text">Jon Carpenter</string>
+    <string name="fr_invite_textview_profession_text">Dentist</string>
+    <string name="fr_invite_textview_address_text">521 Westminster Avenue APT D5 Brooklyn, NY, 11090</string>
+    <string name="fr_invite_edit_profile_button_text">Message</string>
+    <string name="fr_invite_my_contacts_button_text">Add to my contacts</string>
 
 </resources>

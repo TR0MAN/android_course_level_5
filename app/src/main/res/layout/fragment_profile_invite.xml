@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
-    tools:context="com.example.androidcourselevel5.presentation.ui.FragmentProfileSettings">
+    tools:context="com.example.androidcourselevel5.presentation.ui.FragmentProfileInvite">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutMain"
@@ -37,74 +37,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="@dimen/fr_invite_middle_guideline_position" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/topElementsContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/fr_settings_elements_container_horizontal_padding"
-            android:layout_marginTop="@dimen/fr_settings_elements_container_margin_top"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
+        <include
+            android:id="@+id/customToolbarProfile"
+            layout="@layout/custom_toolbar_profile"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="start|center_vertical">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvMyProfileSettings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_semibold_600"
-                    android:text="@string/fr_settings_textview_settings_text"
-                    android:textColor="@color/white_color"
-                    android:textSize="@dimen/fr_settings_text_size"
-                    />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="end|center_vertical" >
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btnMyProfileLogOut"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/logout_button_selector"
-                    android:fontFamily="@font/opensans_semibold_600"
-                    android:paddingHorizontal="@dimen/fr_settings_button_logout_horizontal_padding"
-                    android:text="@string/fr_settings_button_log_out_text"
-                    android:textAllCaps="false"
-                    android:textColor="@color/gray_color"
-                    android:textSize="@dimen/fr_settings_button_logout_text_size"
-                    />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/avatarContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="@dimen/fr_settings_avatar_container_margin_top"
+            android:layout_marginTop="@dimen/fr_invite_avatar_container_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topElementsContainer">
+            app:layout_constraintTop_toBottomOf="@+id/customToolbarProfile">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgProfileMainPhoto"
-                android:layout_width="@dimen/fr_settings_image_view_width"
-                android:layout_height="@dimen/fr_settings_image_view_height"
+                android:layout_width="@dimen/fr_invite_image_view_width"
+                android:layout_height="@dimen/fr_invite_image_view_height"
                 app:shapeAppearanceOverlay="@style/RoundImage"
                 app:srcCompat="@drawable/profile_photo" />
 
@@ -116,8 +71,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/fr_settings_user_information_container_margin_bottom"
-            android:layout_marginTop="@dimen/fr_settings_user_information_container_margin_top"
+            android:layout_marginBottom="@dimen/fr_invite_user_information_container_margin_bottom"
+            android:layout_marginTop="@dimen/fr_invite_user_information_container_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/avatarContainer"
@@ -128,31 +83,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_semibold_600"
-                android:text="@string/fr_settings_textview_name_text"
+                android:text="@string/fr_invite_textview_name_text"
                 android:textColor="@color/white_color"
-                android:textSize="@dimen/fr_settings_name_text_size" />
+                android:textSize="@dimen/fr_invite_name_text_size" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvProfileProfession"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/fr_settings_profession_margin_top"
+                android:layout_marginTop="@dimen/fr_invite_profession_margin_top"
                 android:fontFamily="@font/opensans_semibold_600"
-                android:text="@string/fr_settings_textview_profession_text"
+                android:text="@string/fr_invite_textview_profession_text"
                 android:textColor="@color/gray_color"
-                android:textSize="@dimen/fr_settings_profession_text_size" />
+                android:textSize="@dimen/fr_invite_profession_text_size" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvProfileAddress"
-                android:layout_width="@dimen/fr_settings_address_width"
+                android:layout_width="@dimen/fr_invite_address_width"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/fr_settings_address_min_height"
-                android:layout_marginTop="@dimen/fr_settings_address_margin_top"
-                android:text="@string/fr_settings_textview_address_text"
+                android:minHeight="@dimen/fr_invite_address_min_height"
+                android:layout_marginTop="@dimen/fr_invite_address_margin_top"
+                android:text="@string/fr_invite_textview_address_text"
                 android:fontFamily="@font/opensans_semibold_600"
                 android:textAlignment="center"
                 android:textColor="@color/gray_color"
-                android:textSize="@dimen/fr_settings_address_text_size" />
+                android:textSize="@dimen/fr_invite_address_text_size" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -160,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="@dimen/fr_settings_icon_container_margin_top"
+            android:layout_marginTop="@dimen/fr_invite_icon_container_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/middleGuideline" >
@@ -173,7 +128,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconLinkedIn"
                 style="@style/ProfileSettingsSocialIconStyle"
-                android:layout_marginHorizontal="@dimen/fr_settings_icon_linkedin_horizontal_margin"
+                android:layout_marginHorizontal="@dimen/fr_invite_icon_linkedin_horizontal_margin"
                 android:src="@drawable/ic_linkedin" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -187,9 +142,9 @@
             android:id="@+id/buttonContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/fr_settings_button_container_margin_top"
+            android:layout_marginTop="@dimen/fr_invite_button_container_margin_top"
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/fr_settings_button_container_horizontal_padding"
+            android:paddingHorizontal="@dimen/fr_invite_button_container_horizontal_padding"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -199,33 +154,32 @@
                 android:id="@+id/btnInviteMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/fr_settings_edit_profile_button_margin_bottom"
+                android:layout_marginBottom="@dimen/fr_invite_edit_profile_button_margin_bottom"
                 android:background="@drawable/edit_profile_button_selector"
-                android:text="@string/fr_settings_edit_profile_button_text"
+                android:text="@string/fr_invite_edit_profile_button_text"
                 android:textAllCaps="false"
                 android:textColor="@color/edit_button_custom_text_color"
-                android:textSize="@dimen/fr_settings_edit_profile_button_text_size" />
+                android:textSize="@dimen/fr_invite_edit_profile_button_text_size" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnInviteAddToContacts"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/fr_settings_my_contacts_button_height"
-                android:visibility="invisible"
+                android:layout_height="@dimen/fr_invite_my_contacts_button_height"
                 android:background="@drawable/orange_button_style"
                 android:fontFamily="@font/opensans_semibold_600"
-                android:letterSpacing="@dimen/fr_settings_my_contacts_button_letter_spacing"
-                android:text="@string/fr_settings_my_contacts_button_text"
+                android:letterSpacing="@dimen/fr_invite_my_contacts_button_letter_spacing"
+                android:text="@string/fr_invite_my_contacts_button_text"
                 android:textColor="@color/white_color"
-                android:textSize="@dimen/fr_settings_my_contacts_button_text_size" />
+                android:textSize="@dimen/fr_invite_my_contacts_button_text_size" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <ProgressBar
-            android:id="@+id/progressBarInvite"
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/progressbar_style"
-            android:padding="@dimen/progressbar_padding"
+            android:padding="@dimen/fr_invite_progressbar_padding"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
