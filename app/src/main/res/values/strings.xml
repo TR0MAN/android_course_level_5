@@ -58,5 +58,10 @@
     <string name="contacts_list_tv_add_new_contact_text">Add contacts</string>
     <string name="contacts_list_tv_no_contact_found_text">No contacts found</string>
 
+    <!--    custom toolbar add contact text  -->
+    <string name="custom_toolbar_add_contact_tv_text">Users</string>
+
+    <!--    fragment add contact list text  -->
+    <string name="fr_add_contact_tv_no_contact_found_text">No contacts found</string>
 
 </resources>

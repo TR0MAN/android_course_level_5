@@ -236,6 +236,22 @@
     <dimen name="toolbar_contacts_list_search_field_width">0dp</dimen>
     <dimen name="toolbar_contacts_list_img_close_height">0dp</dimen>
 
+    <!--    custom toolbar add contact parameters  -->
+    <dimen name="custom_toolbar_add_contact_img_back_padding">10dp</dimen>
+    <dimen name="custom_toolbar_add_contact_main_text_size">24sp</dimen>
+    <dimen name="custom_toolbar_add_contact_img_search_padding">10dp</dimen>
+
+    <dimen name="custom_toolbar_add_contact_search_edt_padding_vertical">3dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_margin_start">16dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_padding_start">18dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_padding_right">8dp</dimen>
+
+    <dimen name="custom_toolbar_add_contact_search_img_search_padding">10dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_container_height">0dp</dimen>
+    <dimen name="custom_toolbar_add_contact_img_back_height">0dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_width">0dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_img_height">0dp</dimen>
+
     <!--    fragment contacts list parameters  -->
     <dimen name="contacts_list_new_contact_container_height">56dp</dimen>
     <dimen name="contacts_list_tv_add_new_contact_text_margin_start">14dp</dimen>
@@ -255,6 +271,16 @@
     <dimen name="contacts_list_recycler_view_width">0dp</dimen>
     <dimen name="contacts_list_recycler_view_height">0dp</dimen>
 
+    <!--    fragment add contact parameters  -->
+    <dimen name="fr_add_contact_container_height">56dp</dimen>
+    <dimen name="fr_add_contact_no_contact_container_padding">4dp</dimen>
+
+    <dimen name="fr_add_contact_image_no_image_width">150dp</dimen>
+    <dimen name="fr_add_contact_image_no_image_height">150dp</dimen>
+    <dimen name="fr_add_contact_tv_no_contact_found_text_size">22sp</dimen>
+
+    <dimen name="fr_add_contact_recycler_view_width">0dp</dimen>
+    <dimen name="fr_add_contact_recycler_view_height">0dp</dimen>
 
 
 </resources>

@@ -76,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/toolbar_contacts_list_search_field_margin_start"
             android:drawableEnd="@drawable/ic_toolbar_search_gray"
+            android:background="@drawable/toolbar_search_dark_background_style"
             android:ems="10"
             android:inputType="text"
             android:paddingVertical="@dimen/toolbar_contacts_list_vertical_padding"
