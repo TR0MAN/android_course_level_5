@@ -282,5 +282,33 @@
     <dimen name="fr_add_contact_recycler_view_width">0dp</dimen>
     <dimen name="fr_add_contact_recycler_view_height">0dp</dimen>
 
+    <!--    element recycler view parameters  -->
+    <dimen name="element_rv_checkbox_width">20dp</dimen>
+    <dimen name="element_rv_checkbox_height">20dp</dimen>
+    <dimen name="element_rv_checkbox_margin_start">8dp</dimen>
+
+    <dimen name="element_rv_avatar_image_width">58dp</dimen>
+    <dimen name="element_rv_avatar_image_height">58dp</dimen>
+    <dimen name="element_rv_avatar_image_vertical_margin">8dp</dimen>
+    <dimen name="element_rv_avatar_image_margin_start">12dp</dimen>
+
+    <dimen name="element_rv_delete_image_width">32dp</dimen>
+    <dimen name="element_rv_delete_image_height">32dp</dimen>
+    <dimen name="element_rv_delete_image_margin_end">16dp</dimen>
+
+    <dimen name="element_rv_in_list_checkbox_width">23dp</dimen>
+    <dimen name="element_rv_in_list_checkbox_height">23dp</dimen>
+    <dimen name="element_rv_in_list_checkbox_margin_end">12dp</dimen>
+
+    <dimen name="element_rv_add_to_contacts_image_width">66dp</dimen>
+    <dimen name="element_rv_add_to_contacts_image_height">23dp</dimen>
+    <dimen name="element_rv_add_to_contacts_image_margin_end">12dp</dimen>
+
+    <dimen name="element_rv_contact_name_tv_width">16dp</dimen>
+    <dimen name="element_rv_contact_name_tv_height">6dp</dimen>
+    <dimen name="element_rv_contact_name_tv_text_size">18sp</dimen>
+    <dimen name="element_rv_contact_career_tv_text_size">14sp</dimen>
+    <dimen name="element_rv_main_container_horizontal_margin">12dp</dimen>
+    <dimen name="element_rv_main_container_vertical_margin">6dp</dimen>
 
 </resources>

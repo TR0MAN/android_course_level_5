@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/elementRecyclerViewMainContainer"
+    android:layout_marginHorizontal="@dimen/element_rv_main_container_horizontal_margin"
+    android:layout_marginVertical="@dimen/element_rv_main_container_vertical_margin"
+    android:background="@drawable/element_view_style_white">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkboxForDelete"
+        android:theme="@style/Theme.AppCompat"
+        android:layout_width="@dimen/element_rv_checkbox_width"
+        android:layout_height="@dimen/element_rv_checkbox_height"
+        android:layout_marginStart="@dimen/element_rv_checkbox_margin_start"
+        android:button="@drawable/element_rv_checkbox_selector"
+        android:visibility="gone"
+        android:checked="false"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgContactAvatar"
+        android:layout_width="@dimen/element_rv_avatar_image_width"
+        android:layout_height="@dimen/element_rv_avatar_image_height"
+        android:layout_marginVertical="@dimen/element_rv_avatar_image_vertical_margin"
+        android:layout_marginStart="@dimen/element_rv_avatar_image_margin_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkboxForDelete"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/element_rv_default_avatar" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgContactDelete"
+        android:layout_width="@dimen/element_rv_delete_image_width"
+        android:layout_height="@dimen/element_rv_delete_image_height"
+        android:layout_marginEnd="@dimen/element_rv_delete_image_margin_end"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imgContactAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgContactAvatar"
+        app:srcCompat="@drawable/element_rv_ic_delete" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgContactInList"
+        android:layout_width="@dimen/element_rv_in_list_checkbox_width"
+        android:layout_height="@dimen/element_rv_in_list_checkbox_height"
+        android:layout_marginEnd="@dimen/element_rv_in_list_checkbox_margin_end"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imgContactAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgContactAvatar"
+        app:srcCompat="@drawable/element_rv_ic_contact_added" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgContactAddToContacts"
+        android:layout_width="@dimen/element_rv_add_to_contacts_image_width"
+        android:layout_height="@dimen/element_rv_add_to_contacts_image_height"
+        android:layout_marginEnd="@dimen/element_rv_add_to_contacts_image_margin_end"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imgContactAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgContactAvatar"
+        app:srcCompat="@drawable/element_rv_ic_add_contact" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/element_rv_contact_name_tv_width"
+        android:layout_marginTop="@dimen/element_rv_contact_name_tv_height"
+        android:fontFamily="@font/opensans_semibold_600"
+        android:textSize="@dimen/element_rv_contact_name_tv_text_size"
+        android:textColor="@color/purple_color"
+        android:lines="1"
+        app:layout_constraintStart_toEndOf="@+id/imgContactAvatar"
+        app:layout_constraintTop_toTopOf="@+id/imgContactAvatar"
+        tools:text="Contact Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContactCareer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_regular_400"
+        android:textColor="@color/gray_color"
+        android:textSize="@dimen/element_rv_contact_career_tv_text_size"
+        android:lines="1"
+        app:layout_constraintStart_toStartOf="@+id/tvContactName"
+        app:layout_constraintTop_toBottomOf="@+id/tvContactName"
+        tools:text="Career" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
