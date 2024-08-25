@@ -36,9 +36,6 @@
 
     <dimen name="LinearLayoutTopContainerMarginBottom">28dp</dimen>
 
-    <!--    DELETE THIS PARAMETER AFTER CHANGE -->
-    <dimen name="InputPasswordFormMaxLength">16</dimen>
-
     <dimen name="AuthorizationPasswordTextMarginStart">12dp</dimen>
     <dimen name="AuthorizationPasswordTextSize">14sp</dimen>
 
@@ -74,13 +71,7 @@
     <dimen name="PasswordFieldLetterSpacing">0.2</dimen>
     <dimen name="ConstraintGuidelinePercent">0.54</dimen>
 
-    <!--    unnecessary parameters of additional view elements -->
-    <dimen name="fill_authorisation_data_image_width">40dp</dimen>
-    <dimen name="fill_authorisation_data_image_height">40dp</dimen>
-    <dimen name="CheckboxAuthorizationRememberMeMarginTop">10dp</dimen>
-    <dimen name="CheckboxAuthorizationRememberMePaddingLeft">8dp</dimen>
-    <dimen name="LinearLayoutTopContainerMarginTop">100dp</dimen>
-    <dimen name="registration_activity_fill_all_data_fields_margin_end">24dp</dimen>
+
 
     <!--    registration activity screen parameters  -->
     <dimen name="registration_activity_scroll_view_container_height">0dp</dimen>
@@ -310,5 +301,14 @@
     <dimen name="element_rv_contact_career_tv_text_size">14sp</dimen>
     <dimen name="element_rv_main_container_horizontal_margin">12dp</dimen>
     <dimen name="element_rv_main_container_vertical_margin">6dp</dimen>
+
+    <!--    unnecessary parameters of additional view elements -->
+    <dimen name="fill_authorisation_data_image_width">40dp</dimen>
+    <dimen name="fill_authorisation_data_image_height">40dp</dimen>
+    <dimen name="CheckboxAuthorizationRememberMeMarginTop">10dp</dimen>
+    <dimen name="CheckboxAuthorizationRememberMePaddingLeft">8dp</dimen>
+    <dimen name="LinearLayoutTopContainerMarginTop">100dp</dimen>
+    <dimen name="registration_activity_fill_all_data_fields_margin_end">24dp</dimen>
+    <dimen name="view_pager_height">0dp</dimen>
 
 </resources>
