@@ -3,6 +3,7 @@ package com.example.androidcourselevel5.presentation.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.databinding.ActivityRegistrationBinding
 
@@ -16,6 +17,9 @@ class RegistrationActivity : AppCompatActivity() {
 
 
         setListeners()
+
+        // hide the automatically pop-up keyboard
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
     }
 
     private fun setListeners() {

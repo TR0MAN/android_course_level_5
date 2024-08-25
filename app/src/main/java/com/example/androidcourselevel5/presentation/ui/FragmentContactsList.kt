@@ -32,7 +32,7 @@ class FragmentContactsList : Fragment() {
             findNavController().navigate(R.id.action_fragmentViewPager_to_fragmentAddContact)
         }
 
-        // temporary solution for checking navigation to ContactProfile
+        // temporary solution for checking navigation to ContactProfile fragment
         // change later, use with RecyclerView Adapter
         binding.toolbarContactList.tvMainTextContactList.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentViewPager_to_fragmentContactInfo)

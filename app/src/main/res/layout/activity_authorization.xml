@@ -158,7 +158,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvEmailFiledHelper"
                 style="@style/AuthorizationHelperTextStyle"
-                android:text="@string/authorization_email_and_password_helper_text" />
+                tools:text="required" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPasswordFiledName"
@@ -179,7 +179,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPasswordFiledHelper"
                 style="@style/AuthorizationHelperTextStyle"
-                android:text="@string/authorization_email_and_password_helper_text" />
+                tools:text="required" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/checkBoxAuthorizationRememberMe"

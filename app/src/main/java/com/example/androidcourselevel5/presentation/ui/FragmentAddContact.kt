@@ -29,9 +29,13 @@ class FragmentAddContact : Fragment() {
 
     private fun setListeners() {
 
+        // temporary solution for checking navigation to ProfileInvite fragment
+        // change later, use with RecyclerView Adapter
         binding.toolbarAddContact.tvMainTextAddContact.setOnClickListener {
             findNavController().navigate(R.id.action_fragmentAddContact_to_fragmentProfileInvite)
         }
+
+
     }
 
 }
