@@ -3,8 +3,10 @@ package com.example.androidcourselevel5.presentation.ui
 import android.content.Context
 import android.util.Patterns
 import com.example.androidcourselevel5.R
+import java.util.Calendar
+import java.util.Date
 
-object AuthorizationValidator {
+object ActivityHelper {
 
     fun validateEmail(email: String): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
@@ -33,6 +35,14 @@ object AuthorizationValidator {
             return context.getString(R.string.error_include_white_space)
         }
         return context.getString(R.string.validate_success)
+    }
+
+    fun getBirthday(birthdayDate: String): Date? {
+        val dateList = birthdayDate.split('/')
+        val calendar = Calendar.getInstance(). apply {
+            set(dateList[2].toInt(), dateList[1].toInt().minus(1), dateList[0].toInt(), 0,0, 0)
+        }
+        return calendar.time
     }
 
 }

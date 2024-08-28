@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
@@ -22,6 +21,9 @@ class AuthorizationActivity : AppCompatActivity() {
         binding = ActivityAuthorizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // TODO - DELETE AFTER test in REGISTRATION Activity
+        startActivity(Intent(this, RegistrationActivity::class.java))
+
         setObservers()
         customSymbolTextInputForm()
         setListeners()
@@ -35,7 +37,7 @@ class AuthorizationActivity : AppCompatActivity() {
                 text?.let {
                     if (text.isEmpty()) {
                         tvEmailFiledHelper.clear()
-                    } else if (!AuthorizationValidator.validateEmail(text.toString())) {
+                    } else if (!ActivityHelper.validateEmail(text.toString())) {
                         showEmailErrorMessage()
                     } else {
                         tvEmailFiledHelper.clear()
@@ -48,7 +50,7 @@ class AuthorizationActivity : AppCompatActivity() {
                     if (text.isEmpty()) {
                         tvPasswordFiledHelper.clear()
                     } else {
-                        val validationResult = AuthorizationValidator.validatePassword(binding.root.context, text.toString())
+                        val validationResult = ActivityHelper.validatePassword(binding.root.context, text.toString())
                         if (validationResult != getString(R.string.validate_success)) {
                             showPasswordErrorMessage(validationResult)
                         } else {
@@ -57,7 +59,6 @@ class AuthorizationActivity : AppCompatActivity() {
                     }
                 }
             }
-
 
         }
     }
@@ -75,8 +76,8 @@ class AuthorizationActivity : AppCompatActivity() {
     private fun setListeners() {
 
         binding.btnAuthorizationRegister.setOnClickListener {
-            if (AuthorizationValidator.validateEmail(binding.etEmailFiled.text.toString()) &&
-                AuthorizationValidator.validatePassword(context = this,
+            if (ActivityHelper.validateEmail(binding.etEmailFiled.text.toString()) &&
+                ActivityHelper.validatePassword(context = this,
                     password = binding.etPasswordField.text.toString()) == getString(R.string.validate_success)) {
                 startActivity(Intent(this, RegistrationActivity::class.java))
             } else {

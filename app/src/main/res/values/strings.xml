@@ -25,6 +25,8 @@
     <string name="registration_activity_contact_birthday_help">( for example 2000/05/25 )</string>
     <string name="registration_activity_contact_birthday_hint">example 2000/05/23</string>
     <string name="registration_activity_contact_btn_save_text">SAVE</string>
+    <string name="registration_activity_birthday_wrong_date_message">This date has not yet arrived</string>
+    <string name="registration_activity_fields_must_be_filed_message">"All fields must not be empty "</string>
 
     <!--    profile settings fragment text -->
     <string name="fr_settings_textview_settings_text">Settings</string>
@@ -78,6 +80,7 @@
     <string name="empty_password_or_email_fields">Password or E-mail fields have errors</string>
 
     <string name="empty_field_text">""</string>
+
 
 
 </resources>
