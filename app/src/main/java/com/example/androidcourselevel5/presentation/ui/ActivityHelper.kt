@@ -3,16 +3,19 @@ package com.example.androidcourselevel5.presentation.ui
 import android.content.Context
 import android.util.Patterns
 import com.example.androidcourselevel5.R
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
 import java.util.Date
+import javax.inject.Inject
 
-object ActivityHelper {
 
-    fun validateEmail(email: String): Boolean {
+class ActivityHelper @Inject constructor(private val context: Context) {
+
+    fun checkingEmailFiled(email: String): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    fun validatePassword(context: Context, password: String): String {
+    fun checkingPasswordField(password: String): String {
         if (password.length < 8) {
             return context.getString(R.string.error_min_8_symbols_password)
         }
@@ -37,8 +40,8 @@ object ActivityHelper {
         return context.getString(R.string.validate_success)
     }
 
-    fun getBirthday(birthdayDate: String): Date? {
-        val dateList = birthdayDate.split('/')
+    fun getDateFromBirthdayString(birthday: String): Date? {
+        val dateList = birthday.split('/')
         val calendar = Calendar.getInstance(). apply {
             set(dateList[2].toInt(), dateList[1].toInt().minus(1), dateList[0].toInt(), 0,0, 0)
         }

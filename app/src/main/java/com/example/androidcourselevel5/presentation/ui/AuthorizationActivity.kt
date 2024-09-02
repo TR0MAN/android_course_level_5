@@ -6,15 +6,20 @@ import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.widget.doOnTextChanged
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.databinding.ActivityAuthorizationBinding
 import com.example.androidcourselevel5.domain.constants.Const
 import com.example.androidcourselevel5.presentation.ui.utils.clear
+import com.example.androidcourselevel5.presentation.viewmodel.AuthorizationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AuthorizationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAuthorizationBinding
+    private val authorizationViewModel: AuthorizationViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +27,7 @@ class AuthorizationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // TODO - DELETE AFTER test in REGISTRATION Activity
-        startActivity(Intent(this, RegistrationActivity::class.java))
+//        startActivity(Intent(this, RegistrationActivity::class.java))
 
         setObservers()
         customSymbolTextInputForm()
@@ -37,7 +42,7 @@ class AuthorizationActivity : AppCompatActivity() {
                 text?.let {
                     if (text.isEmpty()) {
                         tvEmailFiledHelper.clear()
-                    } else if (!ActivityHelper.validateEmail(text.toString())) {
+                    } else if (!authorizationViewModel.validateEmail(text.toString())) {
                         showEmailErrorMessage()
                     } else {
                         tvEmailFiledHelper.clear()
@@ -50,7 +55,7 @@ class AuthorizationActivity : AppCompatActivity() {
                     if (text.isEmpty()) {
                         tvPasswordFiledHelper.clear()
                     } else {
-                        val validationResult = ActivityHelper.validatePassword(binding.root.context, text.toString())
+                        val validationResult = authorizationViewModel.validatePassword(text.toString())
                         if (validationResult != getString(R.string.validate_success)) {
                             showPasswordErrorMessage(validationResult)
                         } else {
@@ -75,21 +80,44 @@ class AuthorizationActivity : AppCompatActivity() {
 
     private fun setListeners() {
 
-        binding.btnAuthorizationRegister.setOnClickListener {
-            if (ActivityHelper.validateEmail(binding.etEmailFiled.text.toString()) &&
-                ActivityHelper.validatePassword(context = this,
-                    password = binding.etPasswordField.text.toString()) == getString(R.string.validate_success)) {
-                startActivity(Intent(this, RegistrationActivity::class.java))
-            } else {
-                Toast.makeText(this,
-                    getString(R.string.empty_password_or_email_fields), Toast.LENGTH_SHORT).show()
+        with(binding) {
+
+            btnAuthorizationRegister.setOnClickListener {
+                if (authorizationViewModel.validateEmailAndPassword(
+                        email = etEmailFiled.text.toString(),
+                        password = etPasswordField.text.toString())) {
+                    startActivity(Intent(this@AuthorizationActivity, RegistrationActivity::class.java))
+                } else {
+                    Toast.makeText(this@AuthorizationActivity,
+                        getString(R.string.empty_password_or_email_fields), Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            tvAuthorizationSignInText.setOnClickListener {
+                if (authorizationViewModel.validateEmailAndPassword(
+                        email = etEmailFiled.text.toString(),
+                        password = etPasswordField.text.toString())) {
+
+                    if (true) {
+                        // send request to authorization with entered EMAIL/PASSWORD
+                        Toast.makeText(this@AuthorizationActivity, "YOU AUTHORIZED", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // create dialog for creating new user with current email/password
+                        Toast.makeText(this@AuthorizationActivity, "NO USER WITH CURRENT EMAIL/PASSWORD", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this@AuthorizationActivity,
+                        getString(R.string.empty_password_or_email_fields), Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            // TODO - Only for TEST (DELETE)
+            imgFillAuthorisationData.setOnClickListener {
+                fillAuthorisationData()
             }
         }
 
-        // TODO - Only for TEST (DELETE)
-        binding.imgFillAuthorisationData.setOnClickListener {
-            fillAuthorisationData()
-        }
+
     }
 
     // replacing the standard password escape character with a large character ('●' '⬤')

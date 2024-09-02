@@ -4,24 +4,28 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.data.retrofit.model.CreateUserModel
 import com.example.androidcourselevel5.databinding.ActivityRegistrationBinding
+import com.example.androidcourselevel5.presentation.viewmodel.RegistrationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
 
+@AndroidEntryPoint
 class RegistrationActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistrationBinding
     private lateinit var addContactImageResult: ActivityResultLauncher<Intent>
     private val calendar by lazy { Calendar.getInstance() }
+    private val registrationViewModel: RegistrationViewModel by viewModels()
 
     // Maybe get data from STORAGE
     private var email: String? = null
@@ -59,9 +63,9 @@ class RegistrationActivity : AppCompatActivity() {
 
         with(binding) {
             btnSaveUserData.setOnClickListener {
-                if (checkingFieldsOnNoData()) {
+                if (checkingFieldsOnData()) {
                     // get data from all fields and send response to server
-                    val newUser = prepareDataForServerResponse()
+                    val newUser = prepareDataForServerRequest()
 
                     // send response for create new user
                     // if all OK, then go to Fragment Settings
@@ -95,7 +99,7 @@ class RegistrationActivity : AppCompatActivity() {
         }
     }
 
-    private fun prepareDataForServerResponse(): CreateUserModel {
+    private fun prepareDataForServerRequest(): CreateUserModel {
         return CreateUserModel(
             email = email!!,
             password = password!!,
@@ -103,14 +107,13 @@ class RegistrationActivity : AppCompatActivity() {
             phone = binding.etPhone.text.toString(),
             address = binding.etAddress.text.toString(),
             career = binding.etCareer.text.toString(),
-            birthday = ActivityHelper.getBirthday(binding.etBirthday.text.toString()),
+            birthday = registrationViewModel.getBirthday(binding.etBirthday.text.toString()),
             image = null
         )
     }
 
     private fun showDatePickerDialog() {
-        DatePickerDialog(
-            this,
+        DatePickerDialog(this,
             DatePickerDialog.OnDateSetListener { _, year, month, day ->
                 val selectedDate = Calendar.getInstance().apply {
                     set(year,month,day)
@@ -131,7 +134,7 @@ class RegistrationActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkingFieldsOnNoData(): Boolean {
+    private fun checkingFieldsOnData(): Boolean {
         with(binding) {
             if (etUserName.text.toString().isEmpty() || etUserName.text.toString().isBlank())
                 return false

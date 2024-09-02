@@ -165,7 +165,6 @@
                     android:id="@+id/etBirthday"
                     style="@style/RegistrationEditTextViewStyle"
                     android:layout_marginBottom="@dimen/registration_activity_et_add_contact_margin_bottom"
-                    android:hint="@string/registration_activity_contact_birthday_hint"
                     android:inputType="none"
                     android:maxLength="10"
                     android:editable="false"
