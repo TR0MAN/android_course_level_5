@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
@@ -13,6 +14,7 @@ import androidx.activity.viewModels
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.data.retrofit.model.CreateUserModel
 import com.example.androidcourselevel5.databinding.ActivityRegistrationBinding
+import com.example.androidcourselevel5.domain.constants.Const
 import com.example.androidcourselevel5.presentation.viewmodel.RegistrationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
@@ -27,18 +29,16 @@ class RegistrationActivity : AppCompatActivity() {
     private val calendar by lazy { Calendar.getInstance() }
     private val registrationViewModel: RegistrationViewModel by viewModels()
 
-    // Maybe get data from STORAGE
-    private var email: String? = null
-    private var password: String? = null
+    private var email: String = Const.DEFAULT_STRING_VALUE
+    private var password: String = Const.DEFAULT_STRING_VALUE
+    private var checkBox: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Get real data email and password
-        email = "test@mail.com"
-        password = "123456789"
+        intent?.let { getDataFromIntent(it) }
 
         setActivityResultContract()
         setListeners()
@@ -47,6 +47,11 @@ class RegistrationActivity : AppCompatActivity() {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
     }
 
+    private fun getDataFromIntent(intent: Intent) {
+        email = intent.getStringExtra(Const.EMAIL) ?: Const.DEFAULT_STRING_VALUE
+        password = intent.getStringExtra(Const.PASSWORD) ?: Const.DEFAULT_STRING_VALUE
+        checkBox = intent.getBooleanExtra(Const.CHECKBOX, false)
+    }
 
     private fun setActivityResultContract() {
         addContactImageResult = registerForActivityResult(
@@ -66,9 +71,11 @@ class RegistrationActivity : AppCompatActivity() {
                 if (checkingFieldsOnData()) {
                     // get data from all fields and send response to server
                     val newUser = prepareDataForServerRequest()
+                    Log.d("TAG", "newUser = $newUser")
 
-                    // send response for create new user
-                    // if all OK, then go to Fragment Settings
+                    // send request for create new user
+                    // if all OK, then save USER DATA to storage and go to Fragment Settings
+                    saveUserDataToStorage()
                     startActivity(Intent(this@RegistrationActivity, MainActivity::class.java))
                 } else {
                     Toast.makeText(this@RegistrationActivity,
@@ -99,10 +106,19 @@ class RegistrationActivity : AppCompatActivity() {
         }
     }
 
+    private fun saveUserDataToStorage() {
+        registrationViewModel.saveAllUserData(
+            email = email, password = password, checkbox = checkBox,
+            userName = binding.etUserName.text.toString(),
+            career = binding.etCareer.text.toString(),
+            address = binding.etAddress.text.toString()
+        )
+    }
+
     private fun prepareDataForServerRequest(): CreateUserModel {
         return CreateUserModel(
-            email = email!!,
-            password = password!!,
+            email = email,
+            password = password,
             name = binding.etUserName.text.toString(),
             phone = binding.etPhone.text.toString(),
             address = binding.etAddress.text.toString(),

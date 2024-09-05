@@ -26,13 +26,10 @@ class AuthorizationActivity : AppCompatActivity() {
         binding = ActivityAuthorizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // TODO - DELETE AFTER test in REGISTRATION Activity
-//        startActivity(Intent(this, RegistrationActivity::class.java))
-
-        setObservers()
+        checkingNeedForAutologin()
         customSymbolTextInputForm()
+        setObservers()
         setListeners()
-
     }
 
     private fun setObservers() {
@@ -86,7 +83,8 @@ class AuthorizationActivity : AppCompatActivity() {
                 if (authorizationViewModel.validateEmailAndPassword(
                         email = etEmailFiled.text.toString(),
                         password = etPasswordField.text.toString())) {
-                    startActivity(Intent(this@AuthorizationActivity, RegistrationActivity::class.java))
+
+                    launchRegistrationActivity()
                 } else {
                     Toast.makeText(this@AuthorizationActivity,
                         getString(R.string.empty_password_or_email_fields), Toast.LENGTH_SHORT).show()
@@ -100,6 +98,9 @@ class AuthorizationActivity : AppCompatActivity() {
 
                     if (true) {
                         // send request to authorization with entered EMAIL/PASSWORD
+                        // if response SUCCESS then need save email, pass, checkbox state
+                        saveDataToStorage()
+
                         Toast.makeText(this@AuthorizationActivity, "YOU AUTHORIZED", Toast.LENGTH_SHORT).show()
                     } else {
                         // create dialog for creating new user with current email/password
@@ -117,7 +118,30 @@ class AuthorizationActivity : AppCompatActivity() {
             }
         }
 
+    }
 
+    private fun launchRegistrationActivity() {
+        startActivity(Intent(this@AuthorizationActivity, RegistrationActivity::class.java).apply {
+            putExtra(Const.EMAIL, binding.etEmailFiled.text.toString())
+            putExtra(Const.PASSWORD, binding.etPasswordField.text.toString())
+            putExtra(Const.CHECKBOX, binding.checkBoxAuthorizationRememberMe.isChecked)
+        })
+    }
+
+    // save email, password and checkbox state for use in other pages
+    private fun saveDataToStorage() {
+        authorizationViewModel.saveEmailAndPassword(
+            email = binding.etEmailFiled.text.toString(),
+            password = binding.etPasswordField.text.toString()
+        )
+        authorizationViewModel.saveCheckboxStatus(
+            isChecked = binding.checkBoxAuthorizationRememberMe.isChecked)
+    }
+
+    private fun checkingNeedForAutologin() {
+        if (authorizationViewModel.getCheckboxState()) {
+            startActivity(Intent(this@AuthorizationActivity, MainActivity::class.java))
+        }
     }
 
     // replacing the standard password escape character with a large character ('●' '⬤')

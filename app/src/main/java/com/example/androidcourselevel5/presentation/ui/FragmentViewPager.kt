@@ -10,12 +10,12 @@ import com.example.androidcourselevel5.databinding.FragmentViewPagerBinding
 import com.example.androidcourselevel5.presentation.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FragmentViewPager : Fragment() {
 
     private lateinit var binding: FragmentViewPagerBinding
-
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
