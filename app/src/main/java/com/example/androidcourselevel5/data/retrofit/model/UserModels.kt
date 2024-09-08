@@ -3,7 +3,19 @@ package com.example.androidcourselevel5.data.retrofit.model
 import java.io.File
 import java.util.Date
 
+data class UserAuthorisationEntity (
+    val email: String,
+    val password: String
+)
+data class UserData(
+    val user: ContactInfo,
+    val accessToken: String,
+    val refreshToken: String
+)
 
+data class AllUsers (
+    val users: List<Contact>
+)
 
 data class CreateUserModel(
     val email: String,

@@ -33,6 +33,23 @@ class AuthorizationActivity : AppCompatActivity() {
     }
 
     private fun setObservers() {
+
+        authorizationViewModel.authorisationResult.observe(this) {userData ->
+            // delete after test
+            authorizationViewModel.showData(userData)
+
+
+            authorizationViewModel.saveAllUserDataToDataStorage(
+                userData = userData, password = binding.etPasswordField.text.toString(),
+                checkboxChecked = binding.checkBoxAuthorizationRememberMe.isChecked)
+
+            binding.etEmailFiled.clear()
+            binding.etPasswordField.clear()
+            startActivity(Intent(this, MainActivity::class.java))
+
+        }
+
+
         with(binding) {
 
             etEmailFiled.doOnTextChanged { text, _, _, _ ->
@@ -96,16 +113,19 @@ class AuthorizationActivity : AppCompatActivity() {
                         email = etEmailFiled.text.toString(),
                         password = etPasswordField.text.toString())) {
 
-                    if (true) {
-                        // send request to authorization with entered EMAIL/PASSWORD
-                        // if response SUCCESS then need save email, pass, checkbox state
-                        saveDataToStorage()
+                    authorizationViewModel.authoriseUser(email = etEmailFiled.text.toString(),
+                        password = etPasswordField.text.toString())
 
-                        Toast.makeText(this@AuthorizationActivity, "YOU AUTHORIZED", Toast.LENGTH_SHORT).show()
-                    } else {
-                        // create dialog for creating new user with current email/password
-                        Toast.makeText(this@AuthorizationActivity, "NO USER WITH CURRENT EMAIL/PASSWORD", Toast.LENGTH_SHORT).show()
-                    }
+//                    if (true) {
+//                        // send request to authorization with entered EMAIL/PASSWORD
+//                        // if response SUCCESS then need save email, pass, checkbox state
+//                        saveDataToStorage()
+//
+//                        Toast.makeText(this@AuthorizationActivity, "YOU AUTHORIZED", Toast.LENGTH_SHORT).show()
+//                    } else {
+//                        // create dialog for creating new user with current email/password
+//                        Toast.makeText(this@AuthorizationActivity, "NO USER WITH CURRENT EMAIL/PASSWORD", Toast.LENGTH_SHORT).show()
+//                    }
                 } else {
                     Toast.makeText(this@AuthorizationActivity,
                         getString(R.string.empty_password_or_email_fields), Toast.LENGTH_SHORT).show()

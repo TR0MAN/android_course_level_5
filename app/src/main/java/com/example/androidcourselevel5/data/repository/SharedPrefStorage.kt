@@ -71,7 +71,7 @@ class SharedPrefStorage @Inject constructor(
         return sharedPreferences.getString(KEY_REFRESH_TOKEN, DEFAULT_VALUE).toString()
     }
 
-    override fun saveBigUserData(name: String, career: String, address: String) {
+    override fun saveBigUserData(name: String?, career: String?, address: String?) {
         sharedPreferences.edit().apply {
             putString(KEY_USER_NAME, name)
             putString(KEY_USER_CAREER, career)
@@ -92,10 +92,6 @@ class SharedPrefStorage @Inject constructor(
             clear()
         }.apply()
     }
-
-//    fun getPref(): SharedPreferences {
-//        return sharedPreferences
-//    }
 
     companion object {
         const val PREFERENCES_NAME = "UserDataStorage"

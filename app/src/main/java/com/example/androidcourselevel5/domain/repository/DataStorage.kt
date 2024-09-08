@@ -20,7 +20,7 @@ interface DataStorage {
     fun saveRefreshToken(refreshToken: String)
     fun getRefreshToken(): String
 
-    fun saveBigUserData(name:String, career:String, address: String)
+    fun saveBigUserData(name:String?, career:String?, address: String?)
     fun getUserDataForUI(): List<String>
 
     fun clearStorageData()
