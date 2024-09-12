@@ -248,7 +248,7 @@
             />
 
         <ProgressBar
-            android:id="@+id/progressBarInvite"
+            android:id="@+id/authorisationProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/progressbar_padding"

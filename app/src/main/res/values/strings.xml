@@ -78,8 +78,24 @@
     <string name="response_wrong_email">Incorrect E-mail Address</string>
     <string name="empty_password_or_email_fields">Password or E-mail fields have errors</string>
 
+    <!--    other text fields  -->
     <string name="empty_field_text">""</string>
 
+    <!--    snackbar and toast message text -->
+    <string name="connection_exception_snackbar_message">Problem with internet connection</string>
+    <string name="connection_timeout_snackbar_message">So long time operation, try later</string>
+    <string name="connection_error_snackbar_action_button_text">RETRY</string>
+    <string name="request_error_toast_message">Error: %s, code [%d]</string>
 
+    <!--    alert dialog message text -->
+    <string name="authorisation_alert_dialog_title">Something wrong!</string>
+    <string name="authorisation_alert_dialog_help_message">User with such data is not registered.\nWould you like to register a new user?</string>
+    <string name="authorisation_alert_dialog_positive_button_text">Register</string>
+    <string name="authorisation_alert_dialog_negative_button_text">Cancel</string>
+
+    <!--    message dialog text -->
+    <string name="authorisation_message_dialog_title">What luck!</string>
+    <string name="authorisation_message_dialog_help_message">You have entered the login and password of an already registered user.\nGo to this user profile.</string>
+    <string name="authorisation_message_dialog_positive_button_text">OK</string>
 
 </resources>

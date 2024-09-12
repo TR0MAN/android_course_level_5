@@ -4,7 +4,6 @@ import java.io.File
 import java.io.Serializable
 import java.util.Date
 
-
 data class Contact(
     val id: Int,
     val name: String?,
@@ -12,6 +11,7 @@ data class Contact(
     val address: String?,
     val image: File? = null
 ) : Serializable
+
 data class ContactInfo(
     val id: Int,
     val email: String,
