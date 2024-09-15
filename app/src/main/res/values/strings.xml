@@ -87,6 +87,8 @@
     <string name="connection_error_snackbar_action_button_text">RETRY</string>
     <string name="request_error_toast_message">Error: %s, code [%d]</string>
 
+    <string name="settings_request_error_snackbar_message">Some problem with server API, try later</string>
+
     <!--    alert dialog message text -->
     <string name="authorisation_alert_dialog_title">Something wrong!</string>
     <string name="authorisation_alert_dialog_help_message">User with such data is not registered.\nWould you like to register a new user?</string>
@@ -97,5 +99,7 @@
     <string name="authorisation_message_dialog_title">What luck!</string>
     <string name="authorisation_message_dialog_help_message">You have entered the login and password of an already registered user.\nGo to this user profile.</string>
     <string name="authorisation_message_dialog_positive_button_text">OK</string>
+
+    Some problem with server API
 
 </resources>

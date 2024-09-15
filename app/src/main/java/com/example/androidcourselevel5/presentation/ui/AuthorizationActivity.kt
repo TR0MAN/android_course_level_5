@@ -50,10 +50,6 @@ class AuthorizationActivity : AppCompatActivity() {
             }
         }
 
-        authorizationViewModel.requestProgressBar.observe(this) { visibility ->
-            binding.authorisationProgressBar.visibleIf(visibility)
-        }
-
         authorizationViewModel.authorisationResultException.observe(this) { exception ->
             if (exception)
                 createErrorSnackbar(getString(R.string.connection_exception_snackbar_message)).show()
@@ -73,6 +69,10 @@ class AuthorizationActivity : AppCompatActivity() {
                 launchRegistrationActivity()
                 authorizationViewModel.pressRegistrationButton()
             }
+        }
+
+        authorizationViewModel.requestProgressBar.observe(this) { visibility ->
+            binding.authorisationProgressBar.visibleIf(visibility)
         }
 
         with(binding) {
@@ -140,7 +140,6 @@ class AuthorizationActivity : AppCompatActivity() {
                 if (authorizationViewModel.validateEmailAndPassword(
                         email = etEmailFiled.text.toString(),
                         password = etPasswordField.text.toString())) {
-
                     launchAuthorisation()
                     authorizationViewModel.pressSignInButton()
 
@@ -155,7 +154,6 @@ class AuthorizationActivity : AppCompatActivity() {
                 fillAuthorisationData()
             }
         }
-
     }
 
     private fun createErrorSnackbar(message: String): Snackbar {
@@ -177,8 +175,6 @@ class AuthorizationActivity : AppCompatActivity() {
             }
         }
     }
-
-
 
     private fun createAlertDialog(): AlertDialog.Builder {
         return AlertDialog.Builder(this).apply {
@@ -253,16 +249,20 @@ class AuthorizationActivity : AppCompatActivity() {
     // TODO - DELETE method after test (in the end)
     private fun fillAuthorisationData() {
 
-//        // new created contact for testing
-//        binding.etEmailFiled.setText("unit7@email.com")
-//        binding.etPasswordField.setText("2@Qwertyu")
-
         // old contact for testing
-        binding.etEmailFiled.setText("unit6@email.com")
-        binding.etPasswordField.setText("2@Qwertyu")
+        binding.etEmailFiled.setText("unit8@email.com")
+        binding.etPasswordField.setText("3#Qwertyu")
 
 //        // old contact for testing
 //        binding.etEmailFiled.setText("unit5@email.com")
 //        binding.etPasswordField.setText("1!Qqwerty")
+
+//        // old contact for testing
+//        binding.etEmailFiled.setText("unit6@email.com")
+//        binding.etPasswordField.setText("2@Qwertyu")
+
+//        // new created contact for testing
+//        binding.etEmailFiled.setText("unit7@email.com")
+//        binding.etPasswordField.setText("2@Qwertyu")
     }
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidcourselevel5.R
@@ -15,10 +16,12 @@ import com.example.androidcourselevel5.presentation.adapter.ClickListener
 import com.example.androidcourselevel5.presentation.adapter.ContactAdapter
 import com.example.androidcourselevel5.presentation.adapter.ExtendedElementClickListener
 import com.example.androidcourselevel5.presentation.adapter.UsersAdapter
+import com.example.androidcourselevel5.presentation.viewmodel.SharedViewModel
 
 class FragmentContactsList : Fragment(), ExtendedElementClickListener {
 
     private lateinit var binding: FragmentContactsListBinding
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     private val recyclerAdapter by lazy { initRecyclerViewAdapter() }
 
@@ -37,9 +40,7 @@ class FragmentContactsList : Fragment(), ExtendedElementClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         createTestContactList()
-
         recyclerAdapter.submitList(testList)
-
 
         setListeners()
 

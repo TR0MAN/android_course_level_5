@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.databinding.FragmentViewPagerBinding
 import com.example.androidcourselevel5.presentation.adapter.ViewPagerAdapter
+import com.example.androidcourselevel5.presentation.ui.utils.visibleIf
+import com.example.androidcourselevel5.presentation.viewmodel.SharedViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,6 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class FragmentViewPager : Fragment() {
 
     private lateinit var binding: FragmentViewPagerBinding
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -58,14 +62,9 @@ class FragmentViewPager : Fragment() {
     }
 
     private fun setObservers() {
-
-        // observer for change visibility for TabLayout panel
-        // add viewmodel with observable field
-
-//        viewModel.tabLayoutVisibility.observe(viewLifecycleOwner) { visibility ->
-//            binding.tabLayout.visibility = if (visibility) View.VISIBLE else View.GONE
-//        }
-
+        sharedViewModel.tabLayoutVisibility.observe(viewLifecycleOwner) { visibility ->
+            binding.tabLayout.visibleIf(visibility)
+        }
     }
 
     companion object {

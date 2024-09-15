@@ -57,12 +57,12 @@ class AuthorizationViewModel @Inject constructor(
         return (validateEmail(email) && validatePassword(password) == "OK")
     }
 
-    fun saveEmailAndPassword(email: String, password: String) {
+    private fun saveEmailAndPassword(email: String, password: String) {
         storage.saveEmail(email)
         storage.savePassword(password)
     }
 
-    fun saveCheckboxStatus(isChecked: Boolean){
+    private fun saveCheckboxStatus(isChecked: Boolean){
         storage.saveCheckboxState(checked = isChecked)
     }
 
@@ -90,7 +90,7 @@ class AuthorizationViewModel @Inject constructor(
     fun getSignInButtonState() = isPressedSignInButton.value!!
     fun getRegistrationButtonState() = isPressedRegistrationButton.value!!
 
-    fun authoriseUser(email: String, password: String){
+    fun authoriseUser(email: String, password: String) {
         viewModelScope.launch {
             _requestProgressBar.postValue(true)
             val job = withTimeoutOrNull(RequestConst.REQUEST_MAX_DELAY) {

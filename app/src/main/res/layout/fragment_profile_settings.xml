@@ -221,7 +221,7 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <ProgressBar
-            android:id="@+id/progressBarInvite"
+            android:id="@+id/settingsProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/progressbar_style"

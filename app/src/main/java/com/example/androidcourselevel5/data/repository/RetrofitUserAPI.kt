@@ -17,7 +17,7 @@ interface RetrofitUserAPI : ServerUsersActions {
     @Headers("Content-type: application/json")
     @POST("users")
     override suspend fun registerNewUser(
-        @Body registrationUserData: CreateUserModel): Response<ServerResponse>
+        @Body newUserData: CreateUserModel): Response<ServerResponse>
 
     @Headers("Content-type: application/json")
     @POST("login")

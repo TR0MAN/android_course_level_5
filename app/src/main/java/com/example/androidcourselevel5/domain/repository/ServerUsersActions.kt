@@ -8,7 +8,7 @@ import retrofit2.Response
 
 interface ServerUsersActions {
 
-    suspend fun registerNewUser(registrationUserData: CreateUserModel): Response<ServerResponse>
+    suspend fun registerNewUser(newUserData: CreateUserModel): Response<ServerResponse>
 
     suspend fun authoriseUser(userLoginData: UserAuthorisationEntity): Response<ServerResponse>
 
