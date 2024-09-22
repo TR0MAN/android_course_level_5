@@ -23,3 +23,5 @@ fun View.gone() {
 fun View.visibleIf(isVisible: Boolean) {
     visibility = if (isVisible) View.VISIBLE else View.GONE
 }
+
+fun String.convertToToken(): String = "Bearer $this"

@@ -8,4 +8,5 @@ object Const {
     const val CHECKBOX = "activityCheckbox"
     const val DEFAULT_STRING_VALUE = "empty"
 
+    const val RESULT_KEY = "newContactId"
 }

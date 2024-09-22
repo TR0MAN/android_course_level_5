@@ -86,6 +86,8 @@
     <string name="connection_timeout_snackbar_message">So long time operation, try later</string>
     <string name="connection_error_snackbar_action_button_text">RETRY</string>
     <string name="request_error_toast_message">Error: %s, code [%d]</string>
+    <string name="restore_snackbar_text_message">Contact was deleted</string>
+    <string name="restore_snackbar_action_button_text">RESTORE</string>
 
     <string name="settings_request_error_snackbar_message">Some problem with server API, try later</string>
 

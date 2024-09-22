@@ -24,7 +24,7 @@ interface RetrofitContactAPI: ServerContactsActions {
     override suspend fun addContactToUserContactList(
         @Path("userId") userId: Int,
         @Header("Authorization") accessToken: String,
-        @Body contactId: ContactId
+        @Body contactIdForAdding: ContactId
     ): Response<ContactsServerResponse>
 
     @DELETE("users/{userId}/contacts/{contactId}")

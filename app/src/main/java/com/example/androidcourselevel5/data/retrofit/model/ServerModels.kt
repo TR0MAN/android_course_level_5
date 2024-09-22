@@ -7,7 +7,7 @@ data class ServerResponse (
     val data: UserData?
 )
 
-data class ExtensionServerResponse (
+data class UsersServerResponse (
     val status: String,
     val code: Int,
     val message: String?,

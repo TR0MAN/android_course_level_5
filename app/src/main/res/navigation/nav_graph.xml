@@ -35,5 +35,9 @@
         android:id="@+id/fragmentProfileInvite"
         android:name="com.example.androidcourselevel5.presentation.ui.FragmentProfileInvite"
         android:label="fragment_profile_invite"
-        tools:layout="@layout/fragment_profile_invite" />
+        tools:layout="@layout/fragment_profile_invite" >
+        <argument
+            android:name="informationAboutContact"
+            app:argType="com.example.androidcourselevel5.data.retrofit.model.Contact" />
+    </fragment>
 </navigation>

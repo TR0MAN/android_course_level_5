@@ -8,7 +8,7 @@ interface ServerContactsActions {
 
     suspend fun getUserContacts( userId: Int, accessToken: String): Response<ContactsServerResponse>
 
-    suspend fun addContactToUserContactList(userId: Int, accessToken: String, contactId: ContactId
+    suspend fun addContactToUserContactList(userId: Int, accessToken: String, contactIdForAdding: ContactId
     ): Response<ContactsServerResponse>
 
     suspend fun deleteContactFromUserList(userId: Int, contactIdForDelete: Int, accessToken: String

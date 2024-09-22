@@ -249,19 +249,19 @@ class AuthorizationActivity : AppCompatActivity() {
     // TODO - DELETE method after test (in the end)
     private fun fillAuthorisationData() {
 
-        // old contact for testing
-        binding.etEmailFiled.setText("unit8@email.com")
-        binding.etPasswordField.setText("3#Qwertyu")
+        // new created contact for testing
+//        binding.etEmailFiled.setText("unit8@email.com")
+//        binding.etPasswordField.setText("3#Qwertyu")
 
 //        // old contact for testing
 //        binding.etEmailFiled.setText("unit5@email.com")
 //        binding.etPasswordField.setText("1!Qqwerty")
 
 //        // old contact for testing
-//        binding.etEmailFiled.setText("unit6@email.com")
-//        binding.etPasswordField.setText("2@Qwertyu")
+        binding.etEmailFiled.setText("unit6@email.com")
+        binding.etPasswordField.setText("2@Qwertyu")
 
-//        // new created contact for testing
+//        // old contact for testing
 //        binding.etEmailFiled.setText("unit7@email.com")
 //        binding.etPasswordField.setText("2@Qwertyu")
     }

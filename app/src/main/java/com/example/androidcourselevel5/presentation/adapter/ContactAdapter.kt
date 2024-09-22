@@ -8,40 +8,42 @@ import com.bumptech.glide.Glide
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.data.retrofit.model.Contact
 import com.example.androidcourselevel5.databinding.ElementRecyclerViewBinding
-import com.example.androidcourselevel5.presentation.ui.utils.gone
 import com.example.androidcourselevel5.presentation.ui.utils.visible
 
 class ContactAdapter(
     private val clickListener: ClickListener,
     private val multiSelectState: Boolean,
-    private val selectedContacts: List<Int>?) :
-    ListAdapter<Contact, ContactAdapter.ContactViewHolder>(ContactDiffUtilCallback()) {
+    private val selectedContactsForDeleting: List<Int>?
+) : ListAdapter<Contact, ContactAdapter.ContactViewHolder>(ContactDiffUtilCallback()) {
 
     inner class ContactViewHolder(
-        val binding: ElementRecyclerViewBinding) : RecyclerView.ViewHolder(binding.root) {
-            fun bind(contact: Contact) {
-                binding.tvContactName.text = contact.name.toString()
-                binding.tvContactCareer.text = contact.career.toString()
+        val binding: ElementRecyclerViewBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(contact: Contact) {
+            binding.tvContactName.text = contact.name.toString()
+            binding.tvContactCareer.text = contact.career.toString()
 
-                Glide.with(binding.imgContactAvatar.context)
-                    .load(contact.image)
-                    .circleCrop()
-                    .placeholder(R.drawable.default_avatar)
-                    .into(binding.imgContactAvatar)
+            Glide.with(binding.imgContactAvatar.context)
+                .load(contact.image)
+                .circleCrop()
+                .placeholder(R.drawable.default_avatar)
+                .into(binding.imgContactAvatar)
 
-                when (multiSelectState) {
-                    true -> {
-                        binding.checkboxForDelete.visible()
-                        binding.root.setBackgroundResource(R.drawable.element_view_style_gray)
-                        selectedContacts?.let {
-                            binding.checkboxForDelete.isChecked = selectedContacts.contains(contact.id)
-                        }
-                    }
-                    false -> {
-                        binding.imgContactDelete.visible()
+            when (multiSelectState) {
+                true -> {
+                    binding.checkboxForDelete.visible()
+                    binding.root.setBackgroundResource(R.drawable.element_view_style_gray)
+                    selectedContactsForDeleting?.let {
+                        binding.checkboxForDelete.isChecked =
+                            selectedContactsForDeleting.contains(contact.id)
                     }
                 }
+
+                false -> {
+                    binding.imgContactDelete.visible()
+                }
             }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -60,9 +62,13 @@ class ContactAdapter(
                         binding.checkboxForDelete.isChecked = false
                         checkBoxState = false
                     }
-                    (clickListener as ExtendedElementClickListener).onElementChecked(checkBoxState, contact.id)
+                    (clickListener as ExtendedElementClickListener).onElementChecked(
+                        checkBoxState,
+                        contact.id
+                    )
                 }
             }
+
             false -> {
                 binding.imgContactDelete.setOnClickListener {
                     val contact = it.tag as Contact

@@ -13,7 +13,7 @@ import com.example.androidcourselevel5.presentation.ui.utils.visible
 
 class UsersAdapter(
     private val clickListener: ClickListener,
-    private var usersInContactList: MutableList<Int>
+    private var usersInContactList: List<Int>
 ) : ListAdapter<Contact, UsersAdapter.UserViewHolder>(ContactDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -63,8 +63,8 @@ class UsersAdapter(
     }
 
     // TODO - DELETE AFTER TEST
-    fun setUserList(list: List<Int>){
-        usersInContactList.addAll(list)
-        notifyDataSetChanged()
-    }
+//    fun setUserList(list: List<Int>){
+//        usersInContactList.addAll(list)
+//        notifyDataSetChanged()
+//    }
 }

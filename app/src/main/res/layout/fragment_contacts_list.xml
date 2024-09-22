@@ -100,7 +100,7 @@
         />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/contactListProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/progressbar_padding"
@@ -110,5 +110,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/edit_profile_button_style_unpressed"/>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/snackbarCoordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

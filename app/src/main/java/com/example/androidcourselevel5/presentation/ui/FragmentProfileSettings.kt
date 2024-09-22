@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.viewModels
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.databinding.FragmentProfileSettingsBinding
@@ -27,6 +28,8 @@ class FragmentProfileSettings : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         setUserDataToUI()
         checkingNeedForAutologin()
@@ -82,7 +85,7 @@ class FragmentProfileSettings : Fragment() {
     }
 
     private fun createErrorSnackbar(message: String): Snackbar {
-        return Snackbar.make(binding.root, message, Snackbar.LENGTH_INDEFINITE)
+        return Snackbar.make(binding.coordinatorSnackbar, message, Snackbar.LENGTH_INDEFINITE)
             .setActionTextColor(requireActivity().getColor(R.color.orange_color))
             .setAction(getString(R.string.connection_error_snackbar_action_button_text)) {
                 settingsViewModel.refreshUserData()

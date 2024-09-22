@@ -35,13 +35,13 @@
             android:textColor="@color/white_color"
             android:textSize="@dimen/custom_toolbar_add_contact_main_text_size"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imgSearchAddContact"
+            app:layout_constraintEnd_toStartOf="@+id/imgOpenSearchFiled"
             app:layout_constraintStart_toEndOf="@+id/imgBackAddContact"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgSearchAddContact"
+            android:id="@+id/imgOpenSearchFiled"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/custom_toolbar_add_contact_search_container_height"
             android:padding="@dimen/custom_toolbar_add_contact_img_search_padding"
@@ -76,10 +76,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/imgCloseAddContact"/>
+            app:layout_constraintEnd_toStartOf="@id/imgCloseSearchFiled"/>
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgCloseAddContact"
+            android:id="@+id/imgCloseSearchFiled"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/custom_toolbar_add_contact_search_img_height"
             android:padding="@dimen/custom_toolbar_add_contact_search_img_search_padding"
