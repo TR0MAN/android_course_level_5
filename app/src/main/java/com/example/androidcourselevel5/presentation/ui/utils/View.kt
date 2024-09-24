@@ -24,4 +24,8 @@ fun View.visibleIf(isVisible: Boolean) {
     visibility = if (isVisible) View.VISIBLE else View.GONE
 }
 
+fun View.goneIf(isVisible: Boolean) {
+    visibility = if (isVisible) View.GONE else View.VISIBLE
+}
+
 fun String.convertToToken(): String = "Bearer $this"

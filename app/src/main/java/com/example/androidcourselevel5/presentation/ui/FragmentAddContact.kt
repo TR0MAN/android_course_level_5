@@ -17,14 +17,15 @@ import com.example.androidcourselevel5.databinding.FragmentAddContactBinding
 import com.example.androidcourselevel5.domain.constants.Const
 import com.example.androidcourselevel5.presentation.adapter.ElementClickListener
 import com.example.androidcourselevel5.presentation.adapter.UsersAdapter
+import com.example.androidcourselevel5.presentation.ui.utils.clear
 import com.example.androidcourselevel5.presentation.ui.utils.gone
+import com.example.androidcourselevel5.presentation.ui.utils.goneIf
 import com.example.androidcourselevel5.presentation.ui.utils.visible
 import com.example.androidcourselevel5.presentation.ui.utils.visibleIf
 import com.example.androidcourselevel5.presentation.viewmodel.AddContactViewModel
 import com.example.androidcourselevel5.presentation.viewmodel.SharedViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class FragmentAddContact : Fragment(), ElementClickListener {
@@ -39,14 +40,12 @@ class FragmentAddContact : Fragment(), ElementClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        Log.d("TAG", "ADD Contact -> onCreateView")
         binding = FragmentAddContactBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("TAG", "ADD Contact -> onViewCreated")
 
         setObservers()
         setListeners()
@@ -54,9 +53,20 @@ class FragmentAddContact : Fragment(), ElementClickListener {
     }
 
     private fun setObservers() {
+
         addContactViewModel.getUsersListResultSuccess.observe(requireActivity()) { allUsersList ->
-            createRecyclerViewAdapter()
-            recyclerAdapter.submitList(allUsersList)
+            if (allUsersList.isNotEmpty()) {
+                showRecyclerView(true)
+
+                if (addContactViewModel.isActiveSearchField.value == true) {
+                    checkListAndShowResult(addContactViewModel.getFilteredList())
+                } else {
+                    createRecyclerViewAdapter(usersList = allUsersList,
+                        userInContactList = getContactListID(sharedViewModel.contactList.value))
+                }
+            } else {
+                showRecyclerView(false)
+            }
         }
 
         addContactViewModel.getUsersListResultError.observe(requireActivity()) {
@@ -78,14 +88,9 @@ class FragmentAddContact : Fragment(), ElementClickListener {
             binding.addContactProgressBar.visibleIf(visibility)
         }
 
-        // IF ADD OK, THEN ??? i have updated contact lis here
-        // maybe i need to refresh USERs LIST with already added contact
-        // DON'T NEED THIS OBSERVER
-//        sharedViewModel.contactList.observe(requireActivity()) {
-//            // TODO - PROBLEM, need to resolve it
-//            Log.d("TAG", "ADD Contact -> UPDATE NOW Shared ViewModel [counter = $counter]")
-//            sharedViewModel.updateUserContactList(it)
-//        }
+        sharedViewModel.contactList.observe(requireActivity()) {
+            addContactViewModel.updateUsersList()
+        }
 
         sharedViewModel.addContactResultError.observe(requireActivity()) {
             createErrorSnackbar(requireActivity().getString(R.string.request_error_toast_message,
@@ -106,27 +111,41 @@ class FragmentAddContact : Fragment(), ElementClickListener {
             binding.addContactProgressBar.visibleIf(visibility)
         }
 
+        addContactViewModel.isActiveSearchField.observe(requireActivity()) {visibility ->
+            binding.toolbarAddContact.containerSearchAddContact.visibleIf(visibility)
+            binding.toolbarAddContact.containerTextAddContact.goneIf(visibility)
+        }
+
     }
 
-
     private fun setListeners() {
+        with(binding.toolbarAddContact) {
 
-        binding.toolbarAddContact.imgBackAddContact.setOnClickListener {
-            findNavController().popBackStack()
-        }
+            imgBackAddContact.setOnClickListener {
+                findNavController().popBackStack()
+            }
 
-        binding.toolbarAddContact.imgOpenSearchFiled.setOnClickListener {
+            imgOpenSearchFiled.setOnClickListener {
+                addContactViewModel.setSearchFieldVisibility(true)
+            }
 
-//            viewModel.isActiveSearchAddContact.value = true
-        }
+            imgCloseSearchFiled.setOnClickListener {
+                edSearchAddContact.clear()
+                addContactViewModel.setSearchFieldVisibility(false)
+            }
 
-        binding.toolbarAddContact.imgCloseSearchFiled.setOnClickListener {
-
-//            viewModel.isActiveSearchAddContact.value = false
-        }
-
-        binding.toolbarAddContact.edSearchAddContact.doOnTextChanged { text, _, _, _ ->
-            // TODO
+            edSearchAddContact.doOnTextChanged { text, _, _, _ ->
+                if (text?.isNotEmpty() == true) {
+                    val filteredList =
+                        addContactViewModel.getUsersListResultSuccess.value?.filter {
+                            it.name?.contains(text,true) == true
+                    }
+                    addContactViewModel.saveFilteredList(filteredList)
+                    showFilteredUsersList(filteredList)
+                } else {
+                    showAllUsersList()
+                }
+            }
         }
 
         // listener for getting contact id for adding new contact to contact list
@@ -136,13 +155,53 @@ class FragmentAddContact : Fragment(), ElementClickListener {
         // observer for adding new contact to contact list
         resultOfAddingContact?.observe(viewLifecycleOwner) { id ->
             if (id != null) {
-                sharedViewModel.addContact(id)
+                val alreadyInList = sharedViewModel.contactList.value?.map {it.id }?.contains(id)
+                if (alreadyInList == false) {
+                    sharedViewModel.addContact(id)
+                }
             }
         }
 
     }
+
+    private fun showAllUsersList() {
+        addContactViewModel.getUsersListResultSuccess.value?.let {
+            showRecyclerView(true)
+            createRecyclerViewAdapter(
+                usersList = it,
+                userInContactList = getContactListID(sharedViewModel.contactList.value))
+        }
+    }
+
+    private fun showFilteredUsersList(filteredList: List<Contact>?) {
+        filteredList?.let { list ->
+            checkListAndShowResult(list)
+        }
+    }
+
+    private fun checkListAndShowResult(list: List<Contact>) {
+        if (list.isNotEmpty()) {
+            showRecyclerView(true)
+            createRecyclerViewAdapter(usersList = list,
+                userInContactList = getContactListID(sharedViewModel.contactList.value))
+        } else {
+            showRecyclerView(false)
+        }
+    }
+
     private fun getListWithAllUsers() {
         addContactViewModel.getListWithAllUsers()
+    }
+
+    private fun getContactListID(contactList: List<Contact>?): List<Int> {
+        contactList?.let { list ->
+            return list.map {it.id }
+        } ?: return emptyList()
+    }
+
+    private fun showRecyclerView(visibility: Boolean) {
+        binding.recyclerViewContacts.visibleIf(visibility)
+        binding.noContactsContainer.goneIf(visibility)
     }
 
     override fun onElementClickAction(contact: Contact) {
@@ -162,51 +221,17 @@ class FragmentAddContact : Fragment(), ElementClickListener {
             }
     }
 
-    private fun createRecyclerViewAdapter(userInContactList: List<Int> = emptyList()) {
+    private fun createRecyclerViewAdapter(usersList: List<Contact>,
+                                          userInContactList: List<Int> = emptyList()) {
         recyclerAdapter = UsersAdapter(this, userInContactList)
         binding.recyclerViewContacts.layoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerViewContacts.adapter = recyclerAdapter
+        recyclerAdapter.submitList(usersList)
     }
-
-    // OLD variant
-//    private fun createAdapter(multiSelectState: Boolean?, usersInContactList: List<Int>?,
-//                              filteredContactsList: List<Contact>? = null) {
-//        recyclerViewAdapter = ContactAdapter(this, multiSelectState, usersInContactList, null)
-//        binding.recyclerViewContacts.layoutManager = LinearLayoutManager(requireContext())
-//        binding.recyclerViewContacts.adapter = recyclerViewAdapter
-//        if (filteredContactsList == null)
-//            recyclerViewAdapter.submitList(viewModel.listOfAllUsers.value)
-//        else
-//            recyclerViewAdapter.submitList(filteredContactsList)
-//    }
 
     companion object {
         const val GET_CONTACTS = 1
         const val ADD_CONTACT = 2
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d("TAG", "ADD Contact -> onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("TAG", "ADD Contact -> onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("TAG", "ADD Contact -> onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("TAG", "ADD Contact -> onStop")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        Log.d("TAG", "ADD Contact -> onDestroyView")
-    }
 }

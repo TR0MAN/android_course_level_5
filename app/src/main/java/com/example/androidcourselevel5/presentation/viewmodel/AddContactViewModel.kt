@@ -1,5 +1,6 @@
 package com.example.androidcourselevel5.presentation.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -40,6 +41,12 @@ class AddContactViewModel @Inject constructor(
     private val _requestProgressBar = MutableLiveData<Boolean>(false)
     val requestProgressBar: LiveData<Boolean> = _requestProgressBar
 
+    private val _isActiveSearchField = MutableLiveData<Boolean>(false)
+    val isActiveSearchField: LiveData<Boolean> = _isActiveSearchField
+
+    private var filteredList = mutableListOf<Contact>()
+
+
     fun getListWithAllUsers() {
         viewModelScope.launch {
             _requestProgressBar.postValue(true)
@@ -67,5 +74,24 @@ class AddContactViewModel @Inject constructor(
             _getUsersListResultError.postValue(response)
         }
     }
+
+    fun setSearchFieldVisibility(visibility: Boolean) {
+        _isActiveSearchField.value = visibility
+    }
+
+    fun updateUsersList(){
+        _getUsersListResultSuccess.value?.let {
+            _getUsersListResultSuccess.value = it
+        }
+    }
+
+    fun saveFilteredList(list: List<Contact>?) {
+        filteredList.clear()
+        list?.let {
+            filteredList.addAll(list)
+        }
+    }
+
+    fun getFilteredList() = filteredList
 
 }

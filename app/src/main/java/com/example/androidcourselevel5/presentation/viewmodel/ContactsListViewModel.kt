@@ -49,7 +49,17 @@ class ContactsListViewModel @Inject constructor(
     private val _deleteContactResultTimeout = MutableLiveData<Boolean>(false)
     val deleteContactResultTimeout: LiveData<Boolean> = _deleteContactResultTimeout
 
+    private val _listOfContactsForGroupDeleting = MutableLiveData<List<Int>>(emptyList())
+    val listOfContactsForGroupDeleting: LiveData<List<Int>> = _listOfContactsForGroupDeleting
+
     private var contactIdForDelete = DEFAULT_INT_VALUE
+
+    private val _isActiveSearchField = MutableLiveData<Boolean>(false)
+    val isActiveSearchField: LiveData<Boolean> = _isActiveSearchField
+
+    private var isGroupDeletingStarted = false
+
+    private var filteredList = mutableListOf<Contact>()
 
 
 
@@ -111,6 +121,21 @@ class ContactsListViewModel @Inject constructor(
         }
     }
 
+    // case with group deletion
+    fun deleteMultipleContact(){
+
+        if (_listOfContactsForGroupDeleting.value?.isEmpty() == false) {
+            val currentIdForDelete = _listOfContactsForGroupDeleting.value?.first()
+            _listOfContactsForGroupDeleting.value =
+                _listOfContactsForGroupDeleting.value?.toMutableList()?.apply {
+                remove(currentIdForDelete)
+            }
+            currentIdForDelete?.let { contactIdForDelete = it }
+            deleteFromContacts()
+        }
+
+    }
+
     private fun resetErrorStates() {
         _contactListResultException.value = false
         _contactListResultTimeout.value = false
@@ -134,14 +159,47 @@ class ContactsListViewModel @Inject constructor(
     }
 
     fun showContactDeletingSnackbar() {
-//        Log.d("TAG", "runContactDeleting [deleteContactResultException = ${_deleteContactResultException.value}]")
         _deleteContactResultException.value = true
+    }
+
+    fun addContactToDeletingList(contactID: Int) {
+        _listOfContactsForGroupDeleting.value =
+            _listOfContactsForGroupDeleting.value?.toMutableList()?.apply {
+            add(contactID)
+        }
+    }
+
+    fun removeContactFromDeletingList(contactID: Int) {
+        if (listOfContactsForGroupDeleting.value?.contains(contactID) == true) {
+            _listOfContactsForGroupDeleting.value =
+                _listOfContactsForGroupDeleting.value?.toMutableList()?.apply {
+                    remove(contactID)
+                }
+        }
+    }
+
+    fun setSearchFieldVisibility(visibility: Boolean) {
+        _isActiveSearchField.value = visibility
+    }
+
+    fun saveFilteredList(list: List<Contact>?) {
+        filteredList.clear()
+        list?.let {
+            filteredList.addAll(list)
+        }
+    }
+
+    fun getFilteredList() = filteredList.toList()
+
+    fun getGroupDeletingState() = isGroupDeletingStarted
+
+    fun setGroupDeletingState(state: Boolean) {
+        isGroupDeletingStarted = state
     }
 
     companion object {
         const val DEFAULT_INT_VALUE = 0
         const val GET_LIST = 10
         const val DELETE_CONTACT = 20
-
     }
 }

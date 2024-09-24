@@ -29,7 +29,8 @@ class SharedViewModel @Inject constructor(
 
 
     // ViewPager Fragment fields
-    val tabLayoutVisibility = MutableLiveData<Boolean>(true)
+    private val _tabLayoutVisibility = MutableLiveData<Boolean>(true)
+    val tabLayoutVisibility: LiveData<Boolean> = _tabLayoutVisibility
 
     // Contact list fields
     private val _contactList = MutableLiveData<List<Contact>>()
@@ -53,6 +54,10 @@ class SharedViewModel @Inject constructor(
     // Methods for ContactList fragment
     fun updateUserContactList(contactList: List<Contact>){
         _contactList.value = contactList
+    }
+
+    fun setTabLayoutVisibility(visibility: Boolean){
+        _tabLayoutVisibility.value = visibility
     }
 
     // Methods for Add Contact fragment

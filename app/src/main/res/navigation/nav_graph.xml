@@ -30,7 +30,11 @@
         android:id="@+id/fragmentContactInfo"
         android:name="com.example.androidcourselevel5.presentation.ui.FragmentContactInfo"
         android:label="fragment_contact_info"
-        tools:layout="@layout/fragment_contact_info" />
+        tools:layout="@layout/fragment_contact_info" >
+        <argument
+            android:name="contactInformation"
+            app:argType="com.example.androidcourselevel5.data.retrofit.model.Contact" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentProfileInvite"
         android:name="com.example.androidcourselevel5.presentation.ui.FragmentProfileInvite"

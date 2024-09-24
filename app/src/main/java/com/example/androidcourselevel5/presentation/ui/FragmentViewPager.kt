@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.databinding.FragmentViewPagerBinding
 import com.example.androidcourselevel5.presentation.adapter.ViewPagerAdapter
@@ -20,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class FragmentViewPager : Fragment() {
 
     private lateinit var binding: FragmentViewPagerBinding
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
