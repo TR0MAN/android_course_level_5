@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.databinding.FragmentProfileInviteBinding
 import com.example.androidcourselevel5.domain.constants.Const
+import com.example.androidcourselevel5.presentation.ui.utils.showWithGlide
 
 
 class FragmentProfileInvite : Fragment() {
@@ -38,11 +39,7 @@ class FragmentProfileInvite : Fragment() {
             tvProfileName.text = args.informationAboutContact.name
             tvProfileProfession.text = args.informationAboutContact.career
             tvProfileAddress.text = args.informationAboutContact.address
-            Glide.with(binding.imgProfileInviteMainPhoto.context)
-                .load(args.informationAboutContact.image)
-                .circleCrop()
-                .placeholder(R.drawable.default_avatar)
-                .into(binding.imgProfileInviteMainPhoto)
+            binding.imgProfileInviteMainPhoto.showWithGlide(args.informationAboutContact.image)
         }
     }
 

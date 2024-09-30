@@ -27,7 +27,6 @@ class SharedViewModel @Inject constructor(
     private val contactAPI: ServerContactsActions
 ): ViewModel() {
 
-
     // ViewPager Fragment fields
     private val _tabLayoutVisibility = MutableLiveData<Boolean>(true)
     val tabLayoutVisibility: LiveData<Boolean> = _tabLayoutVisibility

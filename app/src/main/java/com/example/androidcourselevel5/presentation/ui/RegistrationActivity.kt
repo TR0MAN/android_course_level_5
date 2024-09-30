@@ -103,10 +103,8 @@ class RegistrationActivity : AppCompatActivity() {
         with(binding) {
             btnSaveUserData.setOnClickListener {
                 if (checkingFieldsOnData()) {
-
                     val newUser = prepareDataForServerRequest()
                     registrationViewModel.saveRegistrationUserData(registrationUserData = newUser)
-                    Log.d("TAG", "newUser = $newUser")
 
                     launchRegistration(registrationViewModel.getRegistrationUserData())
                 } else {

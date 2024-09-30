@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#292020</color>
+
+    <color name="purple_color">#4F4B73</color>
+    <color name="gray_color">#777D80</color>
+    <color name="white_color">#D8AFAF</color>
+    <color name="orange_color">#A506FB</color>
+    <color name="red_color">#F9CA3E</color>
+    <color name="dark_gray_color">#ADADDD</color>
+
+    <color name="hint_color">#835353</color>
+
+    <color name="element_rv_background_gray">#655846</color>
+
+</resources>

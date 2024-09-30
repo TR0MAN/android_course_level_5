@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.databinding.FragmentContactInfoBinding
+import com.example.androidcourselevel5.presentation.ui.utils.showWithGlide
 
 class FragmentContactInfo : Fragment() {
 
@@ -42,11 +43,7 @@ class FragmentContactInfo : Fragment() {
             tvProfileName.text = args.contactInformation.name
             tvProfileProfession.text = args.contactInformation.career
             tvProfileAddress.text = args.contactInformation.address
-            Glide.with(binding.imgContactInfoMainPhoto.context)
-                .load(args.contactInformation.image)
-                .circleCrop()
-                .placeholder(R.drawable.default_avatar)
-                .into(binding.imgContactInfoMainPhoto)
+            binding.imgContactInfoMainPhoto.showWithGlide(args.contactInformation.image)
         }
     }
 

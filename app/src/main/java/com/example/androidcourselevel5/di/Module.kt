@@ -63,11 +63,4 @@ class Module {
         return retrofit.create(RetrofitContactAPI::class.java)
     }
 
-
-//    @Provides
-//    @Singleton
-//    fun provideTestServerAPI(retrofit: Retrofit): TestServerAPI{
-//        return retrofit.create(TestServerAPI::class.java)
-//    }
-
 }

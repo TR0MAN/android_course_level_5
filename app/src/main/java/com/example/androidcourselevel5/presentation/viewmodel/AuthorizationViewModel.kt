@@ -117,19 +117,4 @@ class AuthorizationViewModel @Inject constructor(
             _authorisationResultError.postValue(response)
         }
     }
-
-    // TODO - DELETE AFTER TESTS
-    fun showData(userData: UserData) {
-        Log.d("TAG", "email = ${userData.user.email}")
-        Log.d("TAG", "id = ${userData.user.id}")
-        Log.d("TAG", "name = ${userData.user.name}")
-        Log.d("TAG", "career = ${userData.user.career}")
-        Log.d("TAG", "address = ${userData.user.address}")
-        Log.d("TAG", "birthday = ${userData.user.birthday}")
-        Log.d("TAG", "phone = ${userData.user.phone}")
-        Log.d("TAG", "email = ${userData.user.email}")
-        Log.d("TAG", "accessToken = ${userData.accessToken}")
-        Log.d("TAG", "refreshToken = ${userData.refreshToken}")
-
-    }
 }

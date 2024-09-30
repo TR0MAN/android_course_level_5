@@ -89,41 +89,35 @@
             app:layout_constraintEnd_toEndOf="@+id/btnAuthorizationRegister"
             app:layout_constraintStart_toStartOf="@+id/btnAuthorizationRegister" />
 
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linearLayoutButtonImitator"
+        <com.example.androidcourselevel5.presentation.ui.customview.CustomButtonView
+            android:id="@+id/btnCustomGoogleButton"
             android:layout_width="match_parent"
             android:layout_height="@dimen/ButtonImitatorHeight"
             android:layout_marginHorizontal="@dimen/ButtonImitatorHorizontalMargin"
             android:layout_marginTop="@dimen/LinearLayoutButtonImitatorMarginTop"
             android:layout_marginBottom="@dimen/ButtonImitatorMarginBottom"
-            android:background="@drawable/google_button_selector"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:minWidth="@dimen/ButtonImitatorMinWidth"
+            android:minHeight="@dimen/ButtonImitatorMinHeight"
+
+            app:buttonText="@string/authorization_button_google_text"
+            app:buttonTextLetterSpacing="@dimen/AuthorizationButtonGoogleTextLetterSpacing"
+            app:buttonTextColor="@color/dark_gray_color"
+            app:buttonTextSize="@dimen/ButtonImitatorTextSize"
+            app:buttonTextStyle="opensans-semibold-600"
+
+            app:buttonBackgroundColor="@color/white_color"
+            app:buttonBorderLineColor="@color/white_color"
+            app:buttonBorderLineWidth="@dimen/ButtonImitatorBorderWidth"
+            app:buttonCornerRadius="@dimen/ButtonImitatorCornerRadius"
+
+            app:buttonImage="@drawable/ic_google_logo"
+            app:buttonImageHeight="@dimen/ButtonImitatorButtonImageHeight"
+            app:buttonDistanceToText="@dimen/ButtonImitatorDistanceToText"
             app:layout_constraintBottom_toTopOf="@+id/tvAuthorizationTextOr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/guideline"
-            app:layout_constraintVertical_bias="@dimen/LinearLayoutButtonImitatorVerticalBias">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imgAuthorizationButtonGoogleIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_google_logo" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvAuthorizationButtonGoogleText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_semibold_600"
-                android:letterSpacing="@dimen/AuthorizationButtonGoogleTextLetterSpacing"
-                android:paddingLeft="@dimen/AuthorizationButtonGoogleTextPaddingLeft"
-                android:text="@string/authorization_button_google_text"
-                android:textSize="@dimen/AuthorizationButtonGoogleTextSize" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            app:layout_constraintVertical_bias="@dimen/LinearLayoutButtonImitatorVerticalBias"/>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/linearLayoutMiddleContainer"

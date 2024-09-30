@@ -142,7 +142,6 @@ class FragmentContactsList : Fragment(), ExtendedElementClickListener {
         }
 
         sharedViewModel.addContactResultException.observe(requireActivity()) { exception ->
-            // TODO - triggered it
             if (exception)
                 createErrorSnackbar(getString(R.string.connection_exception_snackbar_message),RESTORE_CONTACT).show()
         }
@@ -161,8 +160,6 @@ class FragmentContactsList : Fragment(), ExtendedElementClickListener {
 
     private fun getCurrentUserContactsList() {
         if (sharedViewModel.tabLayoutVisibility.value == true) {
-            // TODO - DELETE
-            Log.d("TAG", "ContactList -> getCurrentUserContactsList -> tabLayoutVisibility[${sharedViewModel.tabLayoutVisibility.value}]")
             contactListViewModel.getUserContactsList()
         }
     }

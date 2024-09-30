@@ -94,7 +94,8 @@ class AuthorizationActivity : AppCompatActivity() {
                     if (text.isEmpty()) {
                         tvPasswordFiledHelper.clear()
                     } else {
-                        val validationResult = authorizationViewModel.validatePassword(text.toString())
+                        val validationResult =
+                            authorizationViewModel.validatePassword(text.toString())
                         if (validationResult != getString(R.string.validate_success)) {
                             showPasswordErrorMessage(validationResult)
                         } else {
@@ -252,10 +253,6 @@ class AuthorizationActivity : AppCompatActivity() {
         // new created contact for testing
 //        binding.etEmailFiled.setText("unit8@email.com")
 //        binding.etPasswordField.setText("3#Qwertyu")
-
-//        // old contact for testing
-//        binding.etEmailFiled.setText("unit5@email.com")
-//        binding.etPasswordField.setText("1!Qqwerty")
 
 //        // old contact for testing
         binding.etEmailFiled.setText("unit6@email.com")

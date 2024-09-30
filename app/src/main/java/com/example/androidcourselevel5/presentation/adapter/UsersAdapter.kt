@@ -9,6 +9,7 @@ import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.data.retrofit.model.Contact
 import com.example.androidcourselevel5.databinding.ElementRecyclerViewBinding
 import com.example.androidcourselevel5.presentation.ui.utils.gone
+import com.example.androidcourselevel5.presentation.ui.utils.showWithGlide
 import com.example.androidcourselevel5.presentation.ui.utils.visible
 
 class UsersAdapter(
@@ -40,12 +41,7 @@ class UsersAdapter(
         fun bind(contact: Contact) {
             binding.tvContactName.text = contact.name.toString()
             binding.tvContactCareer.text = contact.career.toString()
-
-            Glide.with(binding.imgContactAvatar.context)
-                .load(contact.image)
-                .circleCrop()
-                .placeholder(R.drawable.default_avatar)
-                .into(binding.imgContactAvatar)
+            binding.imgContactAvatar.showWithGlide(contact.image)
 
             if (usersInContactList.isNotEmpty()) {
                 if (usersInContactList.contains(contact.id)) {
@@ -62,9 +58,4 @@ class UsersAdapter(
         }
     }
 
-    // TODO - DELETE AFTER TEST
-//    fun setUserList(list: List<Int>){
-//        usersInContactList.addAll(list)
-//        notifyDataSetChanged()
-//    }
 }

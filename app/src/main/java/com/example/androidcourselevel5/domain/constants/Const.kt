@@ -7,6 +7,5 @@ object Const {
     const val PASSWORD = "activityPassword"
     const val CHECKBOX = "activityCheckbox"
     const val DEFAULT_STRING_VALUE = "empty"
-
     const val RESULT_KEY = "newContactId"
 }

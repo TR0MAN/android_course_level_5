@@ -1,8 +1,11 @@
 package com.example.androidcourselevel5.presentation.ui.utils
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.androidcourselevel5.R
+import java.io.File
 
 fun TextView.clear() {
     text = resources.getText(R.string.empty_field_text)
@@ -29,3 +32,11 @@ fun View.goneIf(isVisible: Boolean) {
 }
 
 fun String.convertToToken(): String = "Bearer $this"
+
+fun ImageView.showWithGlide(image: File?) {
+    Glide.with(context)
+        .load(image)
+        .circleCrop()
+        .placeholder(R.drawable.default_avatar)
+        .into(this)
+}

@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.androidcourselevel5.R
 import com.example.androidcourselevel5.data.retrofit.model.Contact
 import com.example.androidcourselevel5.databinding.ElementRecyclerViewBinding
+import com.example.androidcourselevel5.presentation.ui.utils.showWithGlide
 import com.example.androidcourselevel5.presentation.ui.utils.visible
 
 class ContactAdapter(
@@ -22,12 +22,7 @@ class ContactAdapter(
         fun bind(contact: Contact) {
             binding.tvContactName.text = contact.name.toString()
             binding.tvContactCareer.text = contact.career.toString()
-
-            Glide.with(binding.imgContactAvatar.context)
-                .load(contact.image)
-                .circleCrop()
-                .placeholder(R.drawable.default_avatar)
-                .into(binding.imgContactAvatar)
+            binding.imgContactAvatar.showWithGlide(contact.image)
 
             when (multiSelectState) {
                 true -> {
@@ -98,5 +93,9 @@ class ContactAdapter(
             imgContactDelete.tag = getItem(position)
             root.tag = getItem(position)
         }
+    }
+
+    fun createFile(){
+
     }
 }
