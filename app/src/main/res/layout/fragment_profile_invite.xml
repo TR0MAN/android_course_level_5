@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context="com.example.androidcourselevel5.presentation.ui.FragmentProfileInvite">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/topSideBackgroundView"
+            style="@style/ProfileSettingsSideViewStyle"
+            android:background="@color/purple_color"
+            app:layout_constraintBottom_toTopOf="@id/bottomSideBackgroundView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/bottomSideBackgroundView"
+            style="@style/ProfileSettingsSideViewStyle"
+            android:background="@color/white_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topSideBackgroundView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/middleGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="@dimen/fr_invite_middle_guideline_position" />
+
+        <include
+            android:id="@+id/customToolbarProfile"
+            layout="@layout/custom_toolbar_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/avatarContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/fr_invite_avatar_container_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customToolbarProfile">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgProfileInviteMainPhoto"
+                android:layout_width="@dimen/fr_invite_image_view_width"
+                android:layout_height="@dimen/fr_invite_image_view_height"
+                app:shapeAppearanceOverlay="@style/RoundImage"
+                app:srcCompat="@drawable/profile_photo" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/userInformationContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/fr_invite_user_information_container_margin_bottom"
+            android:layout_marginTop="@dimen/fr_invite_user_information_container_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/avatarContainer"
+            app:layout_constraintBottom_toTopOf="@id/middleGuideline" >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_semibold_600"
+                android:text="@string/fr_invite_textview_name_text"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/fr_invite_name_text_size" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfileProfession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fr_invite_profession_margin_top"
+                android:fontFamily="@font/opensans_semibold_600"
+                android:text="@string/fr_invite_textview_profession_text"
+                android:textColor="@color/gray_color"
+                android:textSize="@dimen/fr_invite_profession_text_size" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProfileAddress"
+                android:layout_width="@dimen/fr_invite_address_width"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/fr_invite_address_min_height"
+                android:layout_marginTop="@dimen/fr_invite_address_margin_top"
+                android:text="@string/fr_invite_textview_address_text"
+                android:fontFamily="@font/opensans_semibold_600"
+                android:textAlignment="center"
+                android:textColor="@color/gray_color"
+                android:textSize="@dimen/fr_invite_address_text_size" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/iconContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/fr_invite_icon_container_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/middleGuideline" >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgIconFacebook"
+                style="@style/ProfileSettingsSocialIconStyle"
+                android:src="@drawable/ic_facebook" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgIconLinkedIn"
+                style="@style/ProfileSettingsSocialIconStyle"
+                android:layout_marginHorizontal="@dimen/fr_invite_icon_linkedin_horizontal_margin"
+                android:src="@drawable/ic_linkedin" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgIconInstagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_instagram" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/buttonContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fr_invite_button_container_margin_top"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/fr_invite_button_container_horizontal_padding"
+            app:layout_constraintVertical_bias="@dimen/fr_invite_button_container_vertical_bias"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iconContainer" >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnInviteMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/fr_invite_edit_profile_button_margin_bottom"
+                android:background="@drawable/edit_profile_button_selector"
+                android:text="@string/fr_invite_edit_profile_button_text"
+                android:textAllCaps="false"
+                android:textColor="@color/edit_button_custom_text_color"
+                android:textSize="@dimen/fr_invite_edit_profile_button_text_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnInviteAddToContacts"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fr_invite_my_contacts_button_height"
+                android:background="@drawable/orange_button_style"
+                android:fontFamily="@font/opensans_semibold_600"
+                android:letterSpacing="@dimen/fr_invite_my_contacts_button_letter_spacing"
+                android:text="@string/fr_invite_my_contacts_button_text"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/fr_invite_my_contacts_button_text_size" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/progressbar_style"
+            android:padding="@dimen/fr_invite_progressbar_padding"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

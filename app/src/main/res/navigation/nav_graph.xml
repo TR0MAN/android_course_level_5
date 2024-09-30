@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentViewPager">
+
+    <fragment
+        android:id="@+id/fragmentViewPager"
+        android:name="com.example.androidcourselevel5.presentation.ui.FragmentViewPager"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_fragmentViewPager_to_fragmentContactInfo"
+            app:destination="@id/fragmentContactInfo" />
+        <action
+            android:id="@+id/action_fragmentViewPager_to_fragmentAddContact"
+            app:destination="@id/fragmentAddContact" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddContact"
+        android:name="com.example.androidcourselevel5.presentation.ui.FragmentAddContact"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/fragment_add_contact" >
+        <action
+            android:id="@+id/action_fragmentAddContact_to_fragmentProfileInvite"
+            app:destination="@id/fragmentProfileInvite" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentContactInfo"
+        android:name="com.example.androidcourselevel5.presentation.ui.FragmentContactInfo"
+        android:label="fragment_contact_info"
+        tools:layout="@layout/fragment_contact_info" >
+        <argument
+            android:name="contactInformation"
+            app:argType="com.example.androidcourselevel5.data.retrofit.model.Contact" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProfileInvite"
+        android:name="com.example.androidcourselevel5.presentation.ui.FragmentProfileInvite"
+        android:label="fragment_profile_invite"
+        tools:layout="@layout/fragment_profile_invite" >
+        <argument
+            android:name="informationAboutContact"
+            app:argType="com.example.androidcourselevel5.data.retrofit.model.Contact" />
+    </fragment>
+</navigation>
