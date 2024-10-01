@@ -224,7 +224,7 @@ class FragmentAddContact : Fragment(), ElementClickListener {
     private fun createRecyclerViewAdapter(usersList: List<Contact>,
                                           userInContactList: List<Int> = emptyList()) {
         recyclerAdapter = UsersAdapter(this, userInContactList)
-        binding.recyclerViewContacts.layoutManager = LinearLayoutManager(requireActivity())
+        binding.recyclerViewContacts.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerViewContacts.adapter = recyclerAdapter
         recyclerAdapter.submitList(usersList)
     }

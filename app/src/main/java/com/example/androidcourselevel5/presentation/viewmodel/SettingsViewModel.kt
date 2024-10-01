@@ -1,6 +1,5 @@
 package com.example.androidcourselevel5.presentation.viewmodel
 
-
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -81,6 +80,5 @@ class SettingsViewModel @Inject constructor (
         storage.saveAccessToken(accessToken = accessToken)
         storage.saveRefreshToken(refreshToken = refreshToken)
     }
-
 
 }

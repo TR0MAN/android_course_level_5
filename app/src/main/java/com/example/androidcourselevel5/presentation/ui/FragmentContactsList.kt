@@ -1,7 +1,6 @@
 package com.example.androidcourselevel5.presentation.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -62,8 +61,7 @@ class FragmentContactsList : Fragment(), ExtendedElementClickListener {
             } else if (contactListViewModel.isActiveSearchField.value == true) {
                 checkListAndShowResult(contactListViewModel.getFilteredList())
             } else {
-                createRecyclerViewAdapter(multiSelectState = false, selectedContacts = null,
-                    listOfContacts = list)
+                submitUpdatedList(list)
             }
         }
 
@@ -77,16 +75,18 @@ class FragmentContactsList : Fragment(), ExtendedElementClickListener {
         }
 
         contactListViewModel.contactListResultSuccess.observe(requireActivity()) { contactList ->
-            // case for restore contact after deleting
-            if (contactIdForRestore != DEFAULT_ID_FOR_RESTORE) {
-                createErrorSnackbar(getString(R.string.restore_snackbar_text_message), RESTORE_CONTACT).show()
-            }
 
             // case for deleting group of contacts (after rotate)
             if (contactListViewModel.getGroupDeletingState()) {
                 if (contactListViewModel.listOfContactsForGroupDeleting.value?.isEmpty() == false) {
+                    contactIdForRestore = DEFAULT_ID_FOR_RESTORE
                     contactListViewModel.deleteMultipleContact()
                 }
+            }
+
+            // case for restore contact after deleting
+            if (contactIdForRestore != DEFAULT_ID_FOR_RESTORE) {
+                createErrorSnackbar(getString(R.string.restore_snackbar_text_message), RESTORE_CONTACT).show()
             }
 
             // case for normal showing list of contacts
@@ -225,8 +225,16 @@ class FragmentContactsList : Fragment(), ExtendedElementClickListener {
     private fun showNormalContactsList() {
         contactListViewModel.contactListResultSuccess.value?.let {
             showRecyclerView(true)
+            submitUpdatedList(it)
+        }
+    }
+
+    private fun submitUpdatedList(newList: List<Contact>?) {
+        if(::recyclerAdapter.isInitialized) {
+            recyclerAdapter.submitList(newList)
+        } else {
             createRecyclerViewAdapter(multiSelectState = false,
-                selectedContacts = null, listOfContacts = it)
+                selectedContacts = null, listOfContacts = newList)
         }
     }
 
