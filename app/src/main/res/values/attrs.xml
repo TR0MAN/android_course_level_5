@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomButtonView">
+        <!-- Set button text -->
+        <attr name="buttonText" format="string"/>
+        <!-- Set button text color -->
+        <attr name="buttonTextColor" format="color"/>
+        <!-- Set button text size -->
+        <attr name="buttonTextSize" format="dimension"/>
+        <!-- Set button text letter spacing -->
+        <attr name="buttonTextLetterSpacing" format="float"/>
+        <!-- Set button text style -->
+        <attr name="buttonTextStyle" format="flags">
+            <flag name="normal" value="0"/>
+            <flag name="bold" value="1"/>
+            <flag name="italic" value="2"/>
+            <flag name="italic-bold" value="3"/>
+            <flag name="opensans-semibold-600" value="4"/>
+        </attr>
+        <!-- Set button background color -->
+        <attr name="buttonBackgroundColor" format="color"/>
+        <!-- Set button border line color -->
+        <attr name="buttonBorderLineColor" format="color"/>
+        <!-- Set button border line width -->
+        <attr name="buttonBorderLineWidth" format="dimension"/>
+        <!-- Set all button corners radius -->
+        <attr name="buttonCornerRadius" format="dimension"/>
+        <!-- Link to resource with picture (image) -->
+        <attr name="buttonImage" format="reference"/>
+        <!-- Set image height (button size) -->
+        <attr name="buttonImageHeight" format="dimension"/>
+        <!-- Space between picture and text -->
+        <attr name="buttonDistanceToText" format="dimension"/>
+    </declare-styleable>
+
+</resources>

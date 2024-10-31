@@ -15,4 +15,93 @@
     <string name="authorization_helper_text">Fill out the profile and go to the application</string>
     <string name="authorization_greetings_text">Let\'s get acquainted</string>
 
+    <!--    registration activity text  -->
+    <string name="registration_activity_tv_inscription_user_name_text">Username</string>
+    <string name="registration_activity_tv_inscription_career_text">Career</string>
+    <string name="registration_activity_tv_inscription_phone_text">Phone</string>
+    <string name="registration_activity_phone_hint">example 099-456-78-90</string>
+    <string name="registration_activity_tv_inscription_address_text">Address</string>
+    <string name="registration_activity_tv_inscription_birthday_text">Date of birth</string>
+    <string name="registration_activity_contact_birthday_help">( for example 2000/05/25 )</string>
+    <string name="registration_activity_contact_btn_save_text">SAVE</string>
+    <string name="registration_activity_birthday_wrong_date_message">This date has not yet arrived</string>
+    <string name="registration_activity_fields_must_be_filed_message">"All fields must not be empty "</string>
+
+    <!--    profile settings fragment text -->
+    <string name="fr_settings_textview_settings_text">Settings</string>
+    <string name="fr_settings_button_log_out_text">Log out</string>
+    <string name="fr_settings_textview_name_text">Tkachenko Roman</string>
+    <string name="fr_settings_textview_profession_text">Android course student</string>
+    <string name="fr_settings_textview_address_text">5295 Gaylord Walks Apk. 110</string>
+    <string name="fr_settings_my_contacts_button_text">View my contacts</string>
+    <string name="fr_settings_edit_profile_button_text">Edit profile</string>
+
+    <!--    custom toolbar profile text  -->
+    <string name="custom_toolbar_profile_textview_text">Profile</string>
+
+    <!--    profile invite fragment text -->
+    <string name="fr_invite_textview_name_text">Jon Carpenter</string>
+    <string name="fr_invite_textview_profession_text">Dentist</string>
+    <string name="fr_invite_textview_address_text">521 Westminster Avenue APT D5 Brooklyn, NY, 11090</string>
+    <string name="fr_invite_edit_profile_button_text">Message</string>
+    <string name="fr_invite_my_contacts_button_text">Add to my contacts</string>
+
+    <!--    contact information fragment text  -->
+    <string name="fr_contact_info_textview_name_text">Jenny Walker</string>
+    <string name="fr_contact_info_textview_profession_text">Make-up artist</string>
+    <string name="fr_contact_info_textview_address_text">775 Westminster Avenue APT D5 Brooklyn, NY, 11230</string>
+    <string name="fr_contact_info_my_contacts_button_text">Message</string>
+
+    <!--    custom toolbar contacts list text  -->
+    <string name="toolbar_contacts_list_main_text">Contacts</string>
+
+    <!--    fragment contacts list text  -->
+    <string name="contacts_list_tv_add_new_contact_text">Add contacts</string>
+    <string name="contacts_list_tv_no_contact_found_text">No contacts found</string>
+
+    <!--    custom toolbar add contact text  -->
+    <string name="custom_toolbar_add_contact_tv_text">Users</string>
+
+    <!--    fragment add contact list text  -->
+    <string name="fr_add_contact_tv_no_contact_found_text">No contacts found</string>
+
+
+    <!--    password ans email check status -->
+    <string name="error_min_8_symbols_password">Minimum 8 symbols password</string>
+    <string name="error_upper_case_symbol">Must contain 1 upper-case symbol</string>
+    <string name="error_lower_case_symbol">Must contain 1 lower-case symbol</string>
+    <string name="error_contain_number">Must contain 1 number (0-9)</string>
+    <string name="error_contain_special_symbol"><![CDATA[Must contain 1 special symbol (!@#$%^&*)]]></string>
+    <string name="error_include_wrong_spec_symbols"><![CDATA[Must not include symbols (~`()_+|?/.{}[],<>=-)]]></string>
+    <string name="error_include_white_space">Must not include a white space</string>
+    <string name="validate_success">OK</string>
+    <string name="response_wrong_email">Incorrect E-mail Address</string>
+    <string name="empty_password_or_email_fields">Password or E-mail fields have errors</string>
+
+    <!--    other text fields  -->
+    <string name="empty_field_text">""</string>
+
+    <!--    snackbar and toast message text -->
+    <string name="connection_exception_snackbar_message">Problem with internet connection</string>
+    <string name="connection_timeout_snackbar_message">So long time operation, try later</string>
+    <string name="connection_error_snackbar_action_button_text">RETRY</string>
+    <string name="request_error_toast_message">Error: %s, code [%d]</string>
+    <string name="restore_snackbar_text_message">Contact was deleted</string>
+    <string name="restore_snackbar_action_button_text">RESTORE</string>
+
+    <string name="settings_request_error_snackbar_message">Some problem with server API, try later</string>
+
+    <!--    alert dialog message text -->
+    <string name="authorisation_alert_dialog_title">Something wrong!</string>
+    <string name="authorisation_alert_dialog_help_message">User with such data is not registered.\nWould you like to register a new user?</string>
+    <string name="authorisation_alert_dialog_positive_button_text">Register</string>
+    <string name="authorisation_alert_dialog_negative_button_text">Cancel</string>
+
+    <!--    message dialog text -->
+    <string name="authorisation_message_dialog_title">What luck!</string>
+    <string name="authorisation_message_dialog_help_message">You have entered the login and password of an already registered user.\nGo to this user profile.</string>
+    <string name="authorisation_message_dialog_positive_button_text">OK</string>
+
+    Some problem with server API
+
 </resources>

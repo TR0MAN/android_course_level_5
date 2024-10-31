@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/customToolbarContainerAddContact"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/purple_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerTextAddContact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBackAddContact"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/custom_toolbar_add_contact_img_back_height"
+            android:padding="@dimen/custom_toolbar_add_contact_img_back_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_arrow_back"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMainTextAddContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_toolbar_add_contact_tv_text"
+            android:fontFamily="@font/opensans_semibold_600"
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/custom_toolbar_add_contact_main_text_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgOpenSearchFiled"
+            app:layout_constraintStart_toEndOf="@+id/imgBackAddContact"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgOpenSearchFiled"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/custom_toolbar_add_contact_search_container_height"
+            android:padding="@dimen/custom_toolbar_add_contact_img_search_padding"
+            android:src="@drawable/ic_toolbar_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerSearchAddContact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_color"
+        android:visibility="gone"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edSearchAddContact"
+            android:layout_width="@dimen/custom_toolbar_add_contact_search_edt_width"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/custom_toolbar_add_contact_search_edt_padding_vertical"
+            android:layout_marginStart="@dimen/custom_toolbar_add_contact_search_edt_margin_start"
+            android:paddingStart="@dimen/custom_toolbar_add_contact_search_edt_padding_start"
+            android:paddingRight="@dimen/custom_toolbar_add_contact_search_edt_padding_right"
+            android:background="@drawable/toolbar_search_dark_background_style"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/white_color"
+            android:drawableEnd="@drawable/ic_toolbar_search_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imgCloseSearchFiled"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCloseSearchFiled"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/custom_toolbar_add_contact_search_img_height"
+            android:padding="@dimen/custom_toolbar_add_contact_search_img_search_padding"
+            android:src="@drawable/ic_toolbar_close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.ui.RegistrationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scrollViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/registration_activity_scroll_view_container_height"
+        android:background="@color/purple_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/registration_activity_add_image_container_height"
+            android:background="@color/purple_color"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/emptyContainer"
+                android:layout_width="@dimen/registration_activity_icon_add_new_image_width"
+                android:layout_height="@dimen/registration_activity_icon_add_new_image_height"
+                android:layout_marginEnd="@dimen/registration_activity_icon_add_new_image_margin_start"
+                android:visibility="invisible" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="@dimen/registration_activity_avatar_width"
+                android:layout_height="@dimen/registration_activity_avatar_height"
+                app:shapeAppearanceOverlay="@style/RoundImage"
+                app:srcCompat="@drawable/profile_photo" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAddImageIcon"
+                android:layout_width="@dimen/registration_activity_icon_add_new_image_width"
+                android:layout_height="@dimen/registration_activity_icon_add_new_image_height"
+                android:layout_marginStart="@dimen/registration_activity_icon_add_new_image_margin_start"
+                app:shapeAppearanceOverlay="@style/RoundImage"
+                app:srcCompat="@drawable/ic_add_photo_new" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llInputFieldsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/registration_activity_input_fields_container_horizontal_margin"
+            android:layout_marginTop="@dimen/registration_activity_input_fields_container_margin_top"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llImageContainer">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutNameContainer"
+                style="@style/RegistrationLinearContainerStyle">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvInscriptionUserName"
+                    style="@style/RegistrationTextViewStyle"
+                    android:text="@string/registration_activity_tv_inscription_user_name_text" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etUserName"
+                    style="@style/RegistrationEditTextViewStyle"
+                    android:inputType="textNoSuggestions" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCareerContainer"
+                style="@style/RegistrationLinearContainerStyle"
+                android:layout_marginTop="@dimen/registration_activity_career_container_margin_top">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvInscriptionCareer"
+                    style="@style/RegistrationTextViewStyle"
+                    android:text="@string/registration_activity_tv_inscription_career_text" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etCareer"
+                    style="@style/RegistrationEditTextViewStyle"
+                    android:inputType="text|textNoSuggestions" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutPhoneContainer"
+                style="@style/RegistrationLinearContainerStyle"
+                android:layout_marginTop="@dimen/registration_activity_phone_container_margin_top">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvInscriptionPhone"
+                    style="@style/RegistrationTextViewStyle"
+                    android:text="@string/registration_activity_tv_inscription_phone_text" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etPhone"
+                    style="@style/RegistrationEditTextViewStyle"
+                    android:hint="@string/registration_activity_phone_hint"
+                    android:inputType="number"
+                    android:textColorHint="@color/hint_color" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutAddressContainer"
+                style="@style/RegistrationLinearContainerStyle"
+                android:layout_marginTop="@dimen/registration_activity_address_container_margin_top">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvInscriptionAddress"
+                    style="@style/RegistrationTextViewStyle"
+                    android:text="@string/registration_activity_tv_inscription_address_text" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etAddress"
+                    style="@style/RegistrationEditTextViewStyle"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:lines="2" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutDateContainer"
+                style="@style/RegistrationLinearContainerStyle"
+                android:layout_marginTop="@dimen/registration_activity_birthday_container_margin_top">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayoutInputHelperContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvInscriptionBirthday"
+                        style="@style/RegistrationTextViewStyle"
+                        android:text="@string/registration_activity_tv_inscription_birthday_text" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBirthdayHelp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/registration_activity_birthday_help_margin_start"
+                        android:fontFamily="@font/opensans_semibold_600"
+                        android:text="@string/registration_activity_contact_birthday_help"
+                        android:textColor="@color/gray_color"
+                        android:textSize="@dimen/registration_activity_birthday_help_field_text_size"
+                        android:visibility="invisible" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etBirthday"
+                    style="@style/RegistrationEditTextViewStyle"
+                    android:layout_marginBottom="@dimen/registration_activity_et_add_contact_margin_bottom"
+                    android:inputType="none"
+                    android:maxLength="10"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:textColorHint="@color/hint_color" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/containerForButtonSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/registration_activity_container_button_save_vertical_margin"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llInputFieldsContainer">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveUserData"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/registration_activity_btn_save_height"
+                android:layout_marginHorizontal="@dimen/registration_activity_btn_save_horizontal_margin"
+                android:background="@drawable/orange_button_style"
+                android:fontFamily="@font/opensans_semibold_600"
+                android:letterSpacing="@dimen/registration_activity_button_save_letter_spacing"
+                android:text="@string/registration_activity_contact_btn_save_text"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/registration_activity_btn_save_text_size"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ProgressBar
+            android:id="@+id/registrationProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/progressbar_style"
+            android:padding="@dimen/progressbar_padding"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgFillAllDataFields"
+            android:layout_width="@dimen/registration_activity_icon_add_new_image_width"
+            android:layout_height="@dimen/registration_activity_icon_add_new_image_height"
+            android:layout_margin="@dimen/registration_activity_fill_all_data_fields_margin_end"
+            app:shapeAppearanceOverlay="@style/RoundImage"
+            app:srcCompat="@drawable/ic_temp_fill_data"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

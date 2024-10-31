@@ -18,10 +18,6 @@
     <dimen name="AuthorizationTextOrMarginBottom">4dp</dimen>
     <dimen name="AuthorizationTextOrTextSize">20sp</dimen>
 
-    <dimen name="ButtonImitatorHeight">48dp</dimen>
-    <dimen name="ButtonImitatorHorizontalMargin">8dp</dimen>
-    <dimen name="ButtonImitatorMarginBottom">4dp</dimen>
-
     <dimen name="AuthorizationButtonGoogleTextPaddingLeft">16dp</dimen>
     <dimen name="AuthorizationButtonGoogleTextSize">18sp</dimen>
 
@@ -35,9 +31,6 @@
     <dimen name="InputPasswordFormTextSize">20sp</dimen>
 
     <dimen name="LinearLayoutTopContainerMarginBottom">28dp</dimen>
-
-    <!--    DELETE THIS PARAMETER AFTER CHANGE -->
-    <dimen name="InputPasswordFormMaxLength">16</dimen>
 
     <dimen name="AuthorizationPasswordTextMarginStart">12dp</dimen>
     <dimen name="AuthorizationPasswordTextSize">14sp</dimen>
@@ -63,9 +56,6 @@
     <dimen name="AuthorizationQuestionTextHorizontalBias">0.5</dimen>
     <dimen name="AuthorizationSignInTextHorizontalBias">0.5</dimen>
 
-    <dimen name="LinearLayoutButtonImitatorVerticalBias">1.0</dimen>
-    <dimen name="LinearLayoutButtonImitatorMarginTop">68dp</dimen>
-
     <dimen name="LinearLayoutMiddleContainerHorizontalMargin">12dp</dimen>
     <dimen name="LinearLayoutMiddleContainerHorizontalBias">0.333</dimen>
     <dimen name="LinearLayoutMiddleContainerVerticalBias">1.0</dimen>
@@ -74,12 +64,257 @@
     <dimen name="PasswordFieldLetterSpacing">0.2</dimen>
     <dimen name="ConstraintGuidelinePercent">0.54</dimen>
 
+    <!--    custom button view parameters  -->
+    <dimen name="ButtonImitatorHeight">48dp</dimen>
+    <dimen name="ButtonImitatorHorizontalMargin">8dp</dimen>
+    <dimen name="ButtonImitatorMarginBottom">4dp</dimen>
+    <dimen name="LinearLayoutButtonImitatorVerticalBias">1.0</dimen>
+    <dimen name="LinearLayoutButtonImitatorMarginTop">68dp</dimen>
+    <dimen name="ButtonImitatorMinWidth">50dp</dimen>
+    <dimen name="ButtonImitatorMinHeight">50dp</dimen>
+    <dimen name="ButtonImitatorTextSize">20sp</dimen>
+    <dimen name="ButtonImitatorBorderWidth">2dp</dimen>
+    <dimen name="ButtonImitatorCornerRadius">6dp</dimen>
+    <dimen name="ButtonImitatorButtonImageHeight">24dp</dimen>
+    <dimen name="ButtonImitatorDistanceToText">16dp</dimen>
+
+    <!--    registration activity screen parameters  -->
+    <dimen name="registration_activity_scroll_view_container_height">0dp</dimen>
+    <dimen name="registration_activity_add_image_container_height">152dp</dimen>
+
+    <dimen name="registration_activity_avatar_width">113dp</dimen>
+    <dimen name="registration_activity_avatar_height">113dp</dimen>
+
+    <dimen name="registration_activity_icon_add_new_image_width">40dp</dimen>
+    <dimen name="registration_activity_icon_add_new_image_height">40dp</dimen>
+    <dimen name="registration_activity_icon_add_new_image_margin_start">24dp</dimen>
+
+    <dimen name="registration_activity_input_fields_container_horizontal_margin">16dp</dimen>
+    <dimen name="registration_activity_input_fields_container_margin_top">28dp</dimen>
+
+    <dimen name="registration_activity_career_container_margin_top">8dp</dimen>
+    <dimen name="registration_activity_phone_container_margin_top">8dp</dimen>
+    <dimen name="registration_activity_address_container_margin_top">8dp</dimen>
+    <dimen name="registration_activity_birthday_container_margin_top">8dp</dimen>
+
+    <dimen name="registration_activity_birthday_help_field_text_size">12sp</dimen>
+    <dimen name="registration_activity_et_add_contact_margin_bottom">10dp</dimen>
+
+    <dimen name="registration_activity_btn_save_margin_vertical">8dp</dimen>
+    <dimen name="registration_activity_btn_save_height">55dp</dimen>
+    <dimen name="registration_activity_btn_save_horizontal_margin">16dp</dimen>
+    <dimen name="registration_activity_btn_save_text_size">18sp</dimen>
+    <dimen name="registration_activity_birthday_help_margin_start">8dp</dimen>
+    <dimen name="registration_activity_container_button_save_vertical_margin">14dp</dimen>
+    <dimen name="registration_activity_button_save_letter_spacing">0.15</dimen>
+
+    <!--    profile settings fragment screen parameters  -->
+    <dimen name="fr_settings_elements_container_horizontal_padding">19dp</dimen>
+    <dimen name="fr_settings_elements_container_margin_top">16dp</dimen>
+    <dimen name="fr_settings_user_information_container_margin_top">16dp</dimen>
+    <dimen name="fr_settings_user_information_container_margin_bottom">8dp</dimen>
+
+    <dimen name="fr_settings_avatar_container_margin_top">16dp</dimen>
+
+    <dimen name="fr_settings_margin_top">24dp</dimen>
+    <dimen name="fr_settings_text_size">26sp</dimen>
+
+    <dimen name="fr_settings_button_logout_horizontal_padding">36dp</dimen>
+    <dimen name="fr_settings_button_logout_text_size">16sp</dimen>
+
+    <dimen name="fr_settings_image_view_width">115dp</dimen>
+    <dimen name="fr_settings_image_view_height">115dp</dimen>
+
+    <dimen name="fr_settings_name_text_size">20sp</dimen>
+    <dimen name="fr_settings_profession_margin_top">8dp</dimen>
+    <dimen name="fr_settings_profession_text_size">16sp</dimen>
+
+    <dimen name="fr_settings_address_width">228dp</dimen>
+    <dimen name="fr_settings_address_min_height">40dp</dimen>
+    <dimen name="fr_settings_address_text_size">16sp</dimen>
+    <dimen name="fr_settings_address_margin_top">16sp</dimen>
+
+    <dimen name="fr_settings_my_contacts_button_height">55dp</dimen>
+
+    <dimen name="fr_settings_my_contacts_button_text_size">16sp</dimen>
+    <dimen name="fr_settings_my_contacts_button_letter_spacing">0.15</dimen>
+
+    <dimen name="fr_settings_edit_profile_button_margin_top">8dp</dimen>
+    <dimen name="fr_settings_edit_profile_button_text_size">20sp</dimen>
+    <dimen name="fr_settings_edit_profile_button_margin_bottom">14dp</dimen>
+
+    <dimen name="fr_settings_icon_linkedin_horizontal_margin">32dp</dimen>
+    <dimen name="fr_settings_button_container_margin_top">54dp</dimen>
+    <dimen name="fr_settings_button_container_horizontal_padding">16dp</dimen>
+    <dimen name="fr_settings_icon_container_margin_top">54dp</dimen>
+
+
+
+    <!--    profile invite fragment screen parameters  -->
+    <dimen name="fr_invite_middle_guideline_position">0.50</dimen>
+    <dimen name="fr_invite_avatar_container_margin_top">18dp</dimen>
+    <dimen name="fr_invite_image_view_width">115dp</dimen>
+    <dimen name="fr_invite_image_view_height">115dp</dimen>
+    <dimen name="fr_invite_user_information_container_margin_bottom">8dp</dimen>
+    <dimen name="fr_invite_user_information_container_margin_top">16dp</dimen>
+
+    <dimen name="fr_invite_name_text_size">20sp</dimen>
+    <dimen name="fr_invite_profession_margin_top">8dp</dimen>
+    <dimen name="fr_invite_profession_text_size">16sp</dimen>
+
+    <dimen name="fr_invite_address_width">228dp</dimen>
+    <dimen name="fr_invite_address_min_height">40dp</dimen>
+    <dimen name="fr_invite_address_margin_top">16sp</dimen>
+    <dimen name="fr_invite_address_text_size">16sp</dimen>
+
+    <dimen name="fr_invite_icon_container_margin_top">54dp</dimen>
+    <dimen name="fr_invite_icon_linkedin_horizontal_margin">32dp</dimen>
+
+    <dimen name="fr_invite_button_container_margin_top">54dp</dimen>
+    <dimen name="fr_invite_button_container_horizontal_padding">16dp</dimen>
+    <dimen name="fr_invite_button_container_vertical_bias">0.65</dimen>
+
+    <dimen name="fr_invite_edit_profile_button_margin_bottom">14dp</dimen>
+    <dimen name="fr_invite_edit_profile_button_text_size">20sp</dimen>
+
+    <dimen name="fr_invite_my_contacts_button_height">55dp</dimen>
+    <dimen name="fr_invite_my_contacts_button_letter_spacing">0.15</dimen>
+    <dimen name="fr_invite_my_contacts_button_text_size">16sp</dimen>
+    <dimen name="fr_invite_progressbar_padding">12dp</dimen>
+
+    <!--    contact information fragment screen parameters  -->
+    <dimen name="fr_contact_info_middle_guideline_position">0.50</dimen>
+    <dimen name="fr_contact_info_avatar_container_margin_top">18dp</dimen>
+    <dimen name="fr_contact_info_image_view_width">115dp</dimen>
+    <dimen name="fr_contact_info_image_view_height">115dp</dimen>
+    <dimen name="fr_contact_info_user_information_container_margin_bottom">8dp</dimen>
+    <dimen name="fr_contact_info_user_information_container_margin_top">16dp</dimen>
+
+    <dimen name="fr_contact_info_name_text_size">20sp</dimen>
+    <dimen name="fr_contact_info_profession_margin_top">8dp</dimen>
+    <dimen name="fr_contact_info_profession_text_size">16sp</dimen>
+
+    <dimen name="fr_contact_info_address_width">228dp</dimen>
+    <dimen name="fr_contact_info_address_min_height">40dp</dimen>
+    <dimen name="fr_contact_info_address_margin_top">16sp</dimen>
+    <dimen name="fr_contact_info_address_text_size">16sp</dimen>
+
+    <dimen name="fr_contact_info_icon_container_margin_top">54dp</dimen>
+    <dimen name="fr_contact_info_icon_linkedin_horizontal_margin">32dp</dimen>
+
+    <dimen name="fr_contact_info_button_message_height">55dp</dimen>
+    <dimen name="fr_contact_info_button_message_letter_spacing">0.15</dimen>
+    <dimen name="fr_contact_info_button_message_text_size">16sp</dimen>
+    <dimen name="fr_contact_info_button_message_vertical_bias">0.65</dimen>
+    <dimen name="fr_contact_info_button_message_horizontal_margin">16dp</dimen>
+    <dimen name="fr_contact_info_button_message_margin_top">110dp</dimen>
+
+    <dimen name="fr_contact_info_progressbar_padding">12dp</dimen>
+
+    <!--    custom toolbar profile parameters  -->
+    <dimen name="custom_toolbar_profile_img_back_padding">10dp</dimen>
+    <dimen name="custom_toolbar_profile_img_back_height">0dp</dimen>
+    <dimen name="custom_toolbar_profile_text_size">20sp</dimen>
+    <dimen name="custom_toolbar_profile_guideline_position">0.50</dimen>
+
+    <!--    custom toolbar contacts parameters  -->
+    <dimen name="toolbar_contacts_list_img_back_padding">10dp</dimen>
+    <dimen name="toolbar_contacts_list_text_size">24sp</dimen>
+    <dimen name="toolbar_contacts_list_img_search_padding">10dp</dimen>
+    <dimen name="toolbar_contacts_list_img_close_padding">10dp</dimen>
+    <dimen name="toolbar_contacts_list_vertical_padding">3dp</dimen>
+    <dimen name="toolbar_contacts_list_search_field_margin_start">16dp</dimen>
+    <dimen name="toolbar_contacts_list_padding_start">18dp</dimen>
+    <dimen name="toolbar_contacts_list_padding_right">8dp</dimen>
+    <dimen name="toolbar_contacts_list_guideline_position">0.5</dimen>
+    <dimen name="toolbar_contacts_list_img_back_height">0dp</dimen>
+    <dimen name="toolbar_contacts_list_img_search_height">0dp</dimen>
+    <dimen name="toolbar_contacts_list_search_field_width">0dp</dimen>
+    <dimen name="toolbar_contacts_list_img_close_height">0dp</dimen>
+
+    <!--    custom toolbar add contact parameters  -->
+    <dimen name="custom_toolbar_add_contact_img_back_padding">10dp</dimen>
+    <dimen name="custom_toolbar_add_contact_main_text_size">24sp</dimen>
+    <dimen name="custom_toolbar_add_contact_img_search_padding">10dp</dimen>
+
+    <dimen name="custom_toolbar_add_contact_search_edt_padding_vertical">3dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_margin_start">16dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_padding_start">18dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_padding_right">8dp</dimen>
+
+    <dimen name="custom_toolbar_add_contact_search_img_search_padding">10dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_container_height">0dp</dimen>
+    <dimen name="custom_toolbar_add_contact_img_back_height">0dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_edt_width">0dp</dimen>
+    <dimen name="custom_toolbar_add_contact_search_img_height">0dp</dimen>
+
+    <!--    fragment contacts list parameters  -->
+    <dimen name="contacts_list_new_contact_container_height">56dp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_margin_start">14dp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_padding">4dp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_size">16sp</dimen>
+    <dimen name="contacts_list_tv_add_new_contact_text_margin_top">8dp</dimen>
+
+    <dimen name="contacts_list_empty_list_container_padding">4dp</dimen>
+    <dimen name="contacts_list_image_no_contacts_width">150dp</dimen>
+    <dimen name="contacts_list_image_no_contacts_height">150dp</dimen>
+    <dimen name="contacts_list_no_contact_found_text_size">22sp</dimen>
+
+    <dimen name="contacts_list_image_group_delete_margin_end">16dp</dimen>
+    <dimen name="contacts_list_image_group_delete_padding_top">16dp</dimen>
+    <dimen name="contacts_list_image_group_delete_margin_bottom">26dp</dimen>
+
+    <dimen name="contacts_list_recycler_view_width">0dp</dimen>
+    <dimen name="contacts_list_recycler_view_height">0dp</dimen>
+
+    <!--    fragment add contact parameters  -->
+    <dimen name="fr_add_contact_container_height">56dp</dimen>
+    <dimen name="fr_add_contact_no_contact_container_padding">4dp</dimen>
+
+    <dimen name="fr_add_contact_image_no_image_width">150dp</dimen>
+    <dimen name="fr_add_contact_image_no_image_height">150dp</dimen>
+    <dimen name="fr_add_contact_tv_no_contact_found_text_size">22sp</dimen>
+
+    <dimen name="fr_add_contact_recycler_view_width">0dp</dimen>
+    <dimen name="fr_add_contact_recycler_view_height">0dp</dimen>
+
+    <!--    element recycler view parameters  -->
+    <dimen name="element_rv_checkbox_width">20dp</dimen>
+    <dimen name="element_rv_checkbox_height">20dp</dimen>
+    <dimen name="element_rv_checkbox_margin_start">8dp</dimen>
+
+    <dimen name="element_rv_avatar_image_width">58dp</dimen>
+    <dimen name="element_rv_avatar_image_height">58dp</dimen>
+    <dimen name="element_rv_avatar_image_vertical_margin">8dp</dimen>
+    <dimen name="element_rv_avatar_image_margin_start">12dp</dimen>
+
+    <dimen name="element_rv_delete_image_width">32dp</dimen>
+    <dimen name="element_rv_delete_image_height">32dp</dimen>
+    <dimen name="element_rv_delete_image_margin_end">16dp</dimen>
+
+    <dimen name="element_rv_in_list_checkbox_width">23dp</dimen>
+    <dimen name="element_rv_in_list_checkbox_height">23dp</dimen>
+    <dimen name="element_rv_in_list_checkbox_margin_end">12dp</dimen>
+
+    <dimen name="element_rv_add_to_contacts_image_width">66dp</dimen>
+    <dimen name="element_rv_add_to_contacts_image_height">23dp</dimen>
+    <dimen name="element_rv_add_to_contacts_image_margin_end">12dp</dimen>
+
+    <dimen name="element_rv_contact_name_tv_width">16dp</dimen>
+    <dimen name="element_rv_contact_name_tv_height">6dp</dimen>
+    <dimen name="element_rv_contact_name_tv_text_size">18sp</dimen>
+    <dimen name="element_rv_contact_career_tv_text_size">14sp</dimen>
+    <dimen name="element_rv_main_container_horizontal_margin">12dp</dimen>
+    <dimen name="element_rv_main_container_vertical_margin">6dp</dimen>
+
     <!--    unnecessary parameters of additional view elements -->
     <dimen name="fill_authorisation_data_image_width">40dp</dimen>
     <dimen name="fill_authorisation_data_image_height">40dp</dimen>
     <dimen name="CheckboxAuthorizationRememberMeMarginTop">10dp</dimen>
     <dimen name="CheckboxAuthorizationRememberMePaddingLeft">8dp</dimen>
     <dimen name="LinearLayoutTopContainerMarginTop">100dp</dimen>
+    <dimen name="registration_activity_fill_all_data_fields_margin_end">24dp</dimen>
+    <dimen name="view_pager_height">0dp</dimen>
 
 
 </resources>
