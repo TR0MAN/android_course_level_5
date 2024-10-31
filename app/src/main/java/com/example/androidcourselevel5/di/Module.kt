@@ -42,10 +42,11 @@ class Module {
     fun provideRetrofit(): Retrofit {
         val interceptor =
             HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
+        val myInterceptor = CorrectiveInterceptor()
         return Retrofit.Builder()
             .baseUrl(RETROFIT_BASE_URL)
             .client(OkHttpClient.Builder()
-                .addInterceptor(interceptor)
+                .addInterceptor(myInterceptor)
                 .build())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

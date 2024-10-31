@@ -37,7 +37,7 @@ class FragmentViewPager : Fragment() {
     private fun initViewPager() {
         val tabs = Tab.entries
         with(binding) {
-            viewPager.adapter = ViewPagerAdapter(requireActivity(), tabs.map { it.tabFragment })
+            viewPager.adapter = ViewPagerAdapter(requireActivity(), getListOfFragments())
             TabLayoutMediator(tabLayout, viewPager) { tab, position ->
                 with(tabs[position]) {
                     tab.text = name
@@ -67,14 +67,18 @@ class FragmentViewPager : Fragment() {
         }
     }
 
+    private fun getListOfFragments(): List<Fragment> {
+        return listOf(FragmentProfileSettings(), FragmentContactsList())
+    }
+
     companion object {
         const val SELECTED_TAB_TRANSPARENCY_LEVEL = 250
         const val UNSELECTED_TAB_TRANSPARENCY_LEVEL = 70
     }
 
-    private enum class Tab(val tabIcon: Int, val tabFragment: Fragment ) {
-        PROFILE(R.drawable.ic_view_pager_profile, FragmentProfileSettings()),
-        CONTACTS(R.drawable.ic_view_pager_contact, FragmentContactsList())
+    private enum class Tab(val tabIcon: Int) {
+        PROFILE(R.drawable.ic_view_pager_profile),
+        CONTACTS(R.drawable.ic_view_pager_contact)
     }
 
 }

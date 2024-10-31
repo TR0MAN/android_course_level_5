@@ -173,19 +173,19 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconFacebook"
                 style="@style/ProfileSettingsSocialIconStyle"
-                android:src="@drawable/ic_facebook" />
+                android:src="@drawable/ic_facebook_new" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconLinkedIn"
                 style="@style/ProfileSettingsSocialIconStyle"
                 android:layout_marginHorizontal="@dimen/fr_settings_icon_linkedin_horizontal_margin"
-                android:src="@drawable/ic_linkedin" />
+                android:src="@drawable/ic_linkedin_new" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconInstagram"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_instagram" />
+                android:src="@drawable/ic_instagram_new" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -215,7 +215,7 @@
                 android:id="@+id/btnInviteAddToContacts"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fr_settings_my_contacts_button_height"
-                android:visibility="invisible"
+                android:visibility="visible"
                 android:background="@drawable/orange_button_style"
                 android:fontFamily="@font/opensans_semibold_600"
                 android:letterSpacing="@dimen/fr_settings_my_contacts_button_letter_spacing"

@@ -123,19 +123,19 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconFacebook"
                 style="@style/ProfileSettingsSocialIconStyle"
-                android:src="@drawable/ic_facebook" />
+                android:src="@drawable/ic_facebook_new" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconLinkedIn"
                 style="@style/ProfileSettingsSocialIconStyle"
                 android:layout_marginHorizontal="@dimen/fr_contact_info_icon_linkedin_horizontal_margin"
-                android:src="@drawable/ic_linkedin" />
+                android:src="@drawable/ic_linkedin_new" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgIconInstagram"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_instagram" />
+                android:src="@drawable/ic_instagram_new" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatButton

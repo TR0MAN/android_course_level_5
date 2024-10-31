@@ -48,7 +48,7 @@
                 android:layout_height="@dimen/registration_activity_icon_add_new_image_height"
                 android:layout_marginStart="@dimen/registration_activity_icon_add_new_image_margin_start"
                 app:shapeAppearanceOverlay="@style/RoundImage"
-                app:srcCompat="@drawable/ic_add_photo" />
+                app:srcCompat="@drawable/ic_add_photo_new" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

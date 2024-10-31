@@ -77,7 +77,7 @@ class CustomButtonView(
         buttonStrokePaint.color = buttonBorderLineColor!!
         buttonStrokePaint.isAntiAlias = true
 
-        textPaint.style = Paint.Style.STROKE
+        textPaint.style = Paint.Style.FILL
         textPaint.color = buttonTextColor!!
         textPaint.textSize = buttonTextSize!!
         textPaint.letterSpacing = buttonLetterSpacing!!
